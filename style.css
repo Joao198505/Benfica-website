@@ -185,17 +185,20 @@ h1, h2, h3 { font-family: "Bebas Neue", sans-serif; letter-spacing: 1px; margin:
   /* Foto von Eusébio: links sichtbar, rechts abgedunkelt für den Text */
   background:
     linear-gradient(90deg, rgba(17, 17, 17, 0.2) 0%, rgba(17, 17, 17, 0.45) 28%, rgba(26, 0, 4, 0.88) 45%, rgba(26, 0, 4, 0.95) 100%),
-    url("img/eusebio.jpg") left 20% / cover no-repeat,
+    url("img/eusebio.jpg") -140px 15% / calc(100% + 140px) auto no-repeat,
     var(--schwarz);
   color: white; padding: 100px 32px; overflow: hidden;
 }
 .eusebio-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+/* Linke Spalte bleibt frei, dort ist Eusébio im Foto zu sehen */
+.eusebio-text { grid-column: 2; }
+.eusebio-kopf { display: flex; align-items: center; gap: 22px; margin-bottom: 12px; }
 .eusebio-nummer {
-  font-family: "Bebas Neue"; font-size: clamp(160px, 25vw, 320px); line-height: 0.8; text-align: center;
-  color: transparent; -webkit-text-stroke: 3px var(--gold);
-  text-shadow: 0 0 40px rgba(242, 193, 78, 0.3);
+  font-family: "Bebas Neue"; font-size: 104px; line-height: 0.8;
+  color: transparent; -webkit-text-stroke: 2px var(--gold);
+  text-shadow: 0 0 30px rgba(242, 193, 78, 0.3);
 }
-.eusebio-text h2 { font-size: 72px; color: white; }
+.eusebio-text h2 { font-size: 72px; color: white; margin: 0; }
 .eusebio-stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 24px; }
 .eusebio-stats div { display: flex; flex-direction: column; }
 
@@ -330,6 +333,10 @@ h1, h2, h3 { font-family: "Bebas Neue", sans-serif; letter-spacing: 1px; margin:
   .nav-links.offen { display: flex; }
   .nav-links li { padding: 14px 20px; border-top: 1px solid #333; }
   .split, .eusebio-inner { grid-template-columns: 1fr; }
+  .eusebio-text { grid-column: auto; }
+  .section-eusebio { background-position: 0 0, 24% 20%, 0 0; background-size: auto, cover, auto; }
+  .eusebio-nummer { font-size: 80px; }
+  .eusebio-text h2 { font-size: 60px; }
   .section { padding: 70px 20px; }
   .section-title { font-size: 44px; }
   .modal-inhalt { padding: 28px 16px; }
@@ -355,6 +362,3 @@ h1, h2, h3 { font-family: "Bebas Neue", sans-serif; letter-spacing: 1px; margin:
     url("img/fans.jpg") center 40% / cover no-repeat;
   animation: none;
 }
-
-/* Die große 10 dezenter, damit sie das Foto nicht überdeckt */
-.section-eusebio .eusebio-nummer { opacity: 0.35; }
