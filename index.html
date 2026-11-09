@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benfica – Die Adler aus Lissabon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Konfetti-Leinwand -->
+  <canvas id="konfetti"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#start" class="nav-logo" title="Adler fliegen lassen">BENFICA</a>
+    <ul class="nav-links">
+      <li><a href="#" class="kader-oeffnen" data-i18n="nav_kader">Kader</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#geschichte" data-i18n="nav_geschichte">Geschichte</a></li>
+      <li><a href="#eusebio">Eusébio</a></li>
+      <li><a href="#titel" data-i18n="nav_titel">Titel</a></li>
+      <li><a href="#stadion" data-i18n="nav_stadion">Stadion</a></li>
+      <li><a href="#fans">Fans</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+    </ul>
+    <div class="nav-rechts">
+      <div class="sprache">
+        <button data-lang="de" class="aktiv">DE</button>
+        <button data-lang="pt">PT</button>
+      </div>
+      <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+    </div>
+  </nav>
+
+  <!-- Startbereich -->
+  <header id="start" class="hero">
+    <!-- Flutlicht-Strahlen -->
+    <div class="flutlicht flutlicht-1"></div>
+    <div class="flutlicht flutlicht-2"></div>
+
+    <!-- Fliegender Adler (eigene Zeichnung) -->
+    <div class="adler-bahn" id="adler">
+      <svg class="adler" viewBox="0 0 400 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="fluegel-farbe" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a301a"/>
+            <stop offset="0.55" stop-color="#2b1a0d"/>
+            <stop offset="1" stop-color="#140c05"/>
+          </linearGradient>
+          <linearGradient id="deck-farbe" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7a5430"/>
+            <stop offset="1" stop-color="#4a301a"/>
+          </linearGradient>
+          <radialGradient id="koerper-farbe" cx="0.5" cy="0.35" r="0.7">
+            <stop offset="0" stop-color="#6b4626"/>
+            <stop offset="1" stop-color="#24160a"/>
+          </radialGradient>
+          <radialGradient id="kopf-farbe" cx="0.4" cy="0.35" r="0.7">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#d9d4cc"/>
+          </radialGradient>
+          <g id="fluegel-form">
+            <!-- Hauptflügel mit gespreizten Schwungfedern -->
+            <path fill="url(#fluegel-farbe)" d="M192 80
+              C 165 62, 118 50, 70 50
+              L 14 34 L 58 56
+              L 4 50 L 54 64
+              L 2 68 L 52 74
+              L 8 88 L 56 84
+              L 20 104 L 66 92
+              C 88 104, 112 110, 128 106
+              Q 138 116, 148 106 Q 158 116, 168 104 Q 178 112, 192 100 Z"/>
+            <!-- hellere Deckfedern am Vorderrand -->
+            <path fill="url(#deck-farbe)" opacity="0.9" d="M192 80
+              C 165 62, 118 52, 74 52
+              C 104 64, 140 74, 192 92 Z"/>
+            <!-- Federlinien -->
+            <g stroke="#0d0803" stroke-width="1.2" fill="none" opacity="0.55">
+              <path d="M70 52 L 18 37"/><path d="M68 60 L 8 52"/><path d="M66 70 L 6 69"/>
+              <path d="M68 80 L 12 87"/><path d="M72 88 L 24 102"/>
+              <path d="M128 106 L 118 78"/><path d="M148 106 L 142 82"/><path d="M168 104 L 164 86"/>
+            </g>
+          </g>
+        </defs>
+
+        <!-- Flügel: Animation außen, Spiegelung innen -->
+        <g class="fluegel fluegel-links"><use href="#fluegel-form"/></g>
+        <g class="fluegel fluegel-rechts"><use href="#fluegel-form" transform="translate(400 0) scale(-1 1)"/></g>
+
+        <!-- Schwanzfächer -->
+        <path fill="#f2efe9" d="M186 128 L 170 172 Q 200 184, 230 172 L 214 128 Z"/>
+        <g stroke="#b8b2a8" stroke-width="1" opacity="0.8">
+          <path d="M193 132 L 184 175"/><path d="M200 132 L 200 179"/><path d="M207 132 L 216 175"/>
+        </g>
+
+        <!-- Körper -->
+        <path fill="url(#koerper-farbe)" d="M200 66 C 222 70, 226 96, 220 118 C 216 132, 206 140, 200 140 C 194 140, 184 132, 180 118 C 174 96, 178 70, 200 66 Z"/>
+
+        <!-- Fänge -->
+        <path fill="#e8b923" d="M188 132 c -4 6, -2 10, 2 9 c 3 -1, 4 -5, 2 -9 Z"/>
+        <path fill="#e8b923" d="M212 132 c 4 6, 2 10, -2 9 c -3 -1, -4 -5, -2 -9 Z"/>
+
+        <!-- Kopf -->
+        <path fill="url(#kopf-farbe)" d="M200 42 C 214 42, 220 54, 217 66 C 214 76, 207 80, 200 80 C 193 80, 186 76, 183 66 C 180 54, 186 42, 200 42 Z"/>
+        <!-- Augen -->
+        <circle cx="192" cy="58" r="2.6" fill="#c98a12"/><circle cx="192" cy="58" r="1.2" fill="#111"/>
+        <circle cx="208" cy="58" r="2.6" fill="#c98a12"/><circle cx="208" cy="58" r="1.2" fill="#111"/>
+        <path d="M187 54 L 196 55" stroke="#9a9488" stroke-width="1.5"/>
+        <path d="M213 54 L 204 55" stroke="#9a9488" stroke-width="1.5"/>
+        <!-- Schnabel mit Haken -->
+        <path fill="#f0c020" d="M194 62 C 194 58, 206 58, 206 62 L 204 72 C 203 77, 200 80, 198 76 L 196 70 Z"/>
+        <path fill="#c99510" d="M198 76 C 200 80, 203 77, 204 72 L 201 73 Z"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <p class="hero-kicker" data-i18n="hero_kicker">Sport Lisboa e Benfica · seit 1904</p>
+      <div class="titel-wrap">
+        <!-- Logo hinter dem Schriftzug: lege deine Bilddatei als img/logo.png ab -->
+        <img class="hero-logo" src="img/logo.png" alt="" onerror="this.style.display='none'">
+        <h1 data-i18n="hero_titel">Die Adler<br>aus Lissabon</h1>
+      </div>
+      <p class="hero-text" data-i18n="hero_text">Portugals Rekordmeister, zweifacher Europapokalsieger und ein Verein, der für Millionen Menschen mehr ist als Fußball.</p>
+
+      <div class="hero-stats">
+        <div class="stat"><span id="jahre" class="stat-zahl">120+</span><span class="stat-label" data-i18n="stat_jahre">Jahre Geschichte</span></div>
+        <div class="stat"><span class="stat-zahl">38</span><span class="stat-label" data-i18n="stat_meister">Meistertitel (Rekord)</span></div>
+        <div class="stat"><span class="stat-zahl">2×</span><span class="stat-label" data-i18n="stat_europa">Europapokal der Landesmeister</span></div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown">
+        <p class="countdown-titel" data-i18n="countdown_titel">Nächstes Spiel</p>
+        <p class="countdown-spiel" id="countdown-spiel"></p>
+        <div class="countdown-zahlen" id="countdown-zahlen"></div>
+      </div>
+
+      <div class="hero-buttons">
+        <button class="btn kader-oeffnen" data-i18n="btn_kader">Aktuellen Kader ansehen</button>
+        <button class="btn btn-gold" id="carrega">Carrega Benfica! 🎉</button>
+        <a href="#geschichte" class="btn btn-outline" data-i18n="btn_entdecken">Entdecken ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- News -->
+    <section id="news" class="section-news">
+      <div class="news-inner">
+        <h2 class="section-title">News</h2>
+        <p class="section-intro" data-i18n="news_intro">Das Neueste rund um die Adler – in eigenen Worten zusammengefasst, mit Link zum Originalartikel.</p>
+        <div class="news-grid" id="news-grid"></div>
+        <p class="news-stand" id="news-stand"></p>
+      </div>
+    </section>
+
+    <!-- Geschichte -->
+    <section id="geschichte" class="section">
+      <h2 class="section-title" data-i18n="geschichte_titel">Geschichte</h2>
+      <p class="section-intro" data-i18n="geschichte_intro">Klick auf ein Jahr, um mehr zu erfahren.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <button class="timeline-year">1904</button>
+          <div class="timeline-text" data-i18n="tl_1904">Am 28. Februar 1904 wird der Verein in Lissabon gegründet, zunächst unter dem Namen Sport Lisboa. Wenige Jahre später folgt die Fusion zum Sport Lisboa e Benfica.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">1961</button>
+          <div class="timeline-text" data-i18n="tl_1961">Benfica gewinnt im Finale in Bern gegen den FC Barcelona den Europapokal der Landesmeister und beendet damit die Vorherrschaft von Real Madrid.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">1962</button>
+          <div class="timeline-text" data-i18n="tl_1962">Titelverteidigung: In Amsterdam schlägt Benfica Real Madrid mit 5:3. Der junge Eusébio trifft im Finale doppelt.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">1966</button>
+          <div class="timeline-text" data-i18n="tl_1966">Eusébio wird bei der WM in England mit Portugal Dritter und Torschützenkönig des Turniers. Er wird zum ersten großen Weltstar des Vereins.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">2003</button>
+          <div class="timeline-text" data-i18n="tl_2003">Das neue Estádio da Luz wird eröffnet. Ein Jahr später ist es Schauplatz des EM-Finales 2004.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year" data-i18n="tl_heute_jahr">Heute</button>
+          <div class="timeline-text" data-i18n="tl_heute">Benfica gehört zu den Vereinen mit den meisten Mitgliedern weltweit und ist bekannt für seine starke Nachwuchsakademie in Seixal.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eusébio -->
+    <section id="eusebio" class="section-eusebio">
+      <div class="eusebio-inner">
+        <div class="eusebio-nummer">10</div>
+        <div class="eusebio-text">
+          <p class="hero-kicker" data-i18n="eu_kicker">O Pantera Negra · 1942–2014</p>
+          <h2>Eusébio</h2>
+          <p data-i18n="eu_text">Der „Schwarze Panther“ kam 1960 aus Mosambik nach Lissabon und wurde zum größten Spieler der Vereinsgeschichte. Mit seiner Schnelligkeit und seinem gewaltigen Schuss prägte er eine ganze Ära. Vor dem Estádio da Luz erinnert eine Statue an ihn, seit 2015 ruht er im Nationalpantheon in Lissabon.</p>
+          <div class="eusebio-stats">
+            <div><span class="stat-zahl">473</span><span class="stat-label" data-i18n="eu_tore">Pflichtspieltore für Benfica</span></div>
+            <div><span class="stat-zahl">11</span><span class="stat-label" data-i18n="eu_meister">Meistertitel</span></div>
+            <div><span class="stat-zahl">1965</span><span class="stat-label">Ballon d'Or</span></div>
+            <div><span class="stat-zahl">2×</span><span class="stat-label" data-i18n="eu_schuh">Goldener Schuh</span></div>
+            <div><span class="stat-zahl">9</span><span class="stat-label" data-i18n="eu_wm">Tore bei der WM 1966</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trophäen-Vitrine -->
+    <section id="titel" class="section">
+      <h2 class="section-title" data-i18n="titel_titel">Trophäen-Vitrine</h2>
+      <p class="section-intro" data-i18n="titel_intro">Klick auf einen Pokal. Stand: Sommer 2026.</p>
+      <div class="vitrine" id="vitrine"></div>
+      <p class="pokal-info" id="pokal-info"></p>
+    </section>
+
+    <!-- Stadion -->
+    <section id="stadion" class="section section-dark">
+      <div class="split">
+        <div>
+          <h2 class="section-title">Estádio da Luz</h2>
+          <p data-i18n="stadion_1">Das „Stadion des Lichts“ ist die Heimat von Benfica und eines der größten Stadien Portugals. Hier fanden unter anderem das EM-Finale 2004 und das Champions-League-Finale 2014 statt.</p>
+          <p data-i18n="stadion_2">Vor vielen Heimspielen kreist ein echter Adler durch das Stadion und landet anschließend auf dem Vereinswappen. Für viele Fans ist das der emotionalste Moment des Spieltags.</p>
+        </div>
+        <div class="fakten-box">
+          <h3 data-i18n="fakten">Fakten</h3>
+          <ul>
+            <li><strong data-i18n="f_ort">Ort:</strong> Lissabon</li>
+            <li><strong data-i18n="f_eroeffnet">Eröffnet:</strong> 2003</li>
+            <li><strong data-i18n="f_kap">Kapazität:</strong> <span data-i18n="f_kap_wert">über 60.000</span></li>
+            <li><strong data-i18n="f_spitz">Spitzname:</strong> A Catedral</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legenden -->
+    <section id="legenden" class="section">
+      <h2 class="section-title" data-i18n="legenden_titel">Legenden</h2>
+      <div class="karten">
+        <article class="karte">
+          <span class="karte-nummer">C</span>
+          <h3>Mário Coluna</h3>
+          <p class="karte-rolle" data-i18n="leg_coluna_rolle">Mittelfeld · 1954–1970</p>
+          <p data-i18n="leg_coluna">Der legendäre Kapitän der goldenen Generation, die zweimal den Europapokal holte.</p>
+        </article>
+        <article class="karte">
+          <span class="karte-nummer">9</span>
+          <h3>José Águas</h3>
+          <p class="karte-rolle" data-i18n="leg_aguas_rolle">Stürmer · 1950–1963</p>
+          <p data-i18n="leg_aguas">Torjäger und Kapitän beim ersten Europapokalsieg 1961.</p>
+        </article>
+        <article class="karte">
+          <span class="karte-nummer">10</span>
+          <h3>Rui Costa</h3>
+          <p class="karte-rolle" data-i18n="leg_rui_rolle">Mittelfeld · aus der eigenen Jugend</p>
+          <p data-i18n="leg_rui">Eleganter Spielmacher, der nach Jahren in Italien zu seinem Herzensverein zurückkehrte.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Fans mit Choreo -->
+    <section id="fans" class="section-rot choreo">
+      <div class="fans-inner">
+        <h2 class="section-title">Ser Benfiquista</h2>
+        <p class="zitat" data-i18n="fans_zitat">Aus vielen wird eins: „E Pluribus Unum“ ist das Motto des Vereins.</p>
+        <div class="fan-grid">
+          <div class="fan-item"><span>🦅</span><h3>As Águias</h3><p data-i18n="fan_aguias">Der Adler steht für Stärke und Unabhängigkeit und ist das Symbol des Vereins.</p></div>
+          <div class="fan-item"><span>🔴</span><h3>Os Encarnados</h3><p data-i18n="fan_encarnados">„Die Roten“: Spitzname wegen der traditionellen roten Trikots.</p></div>
+          <div class="fan-item"><span>🌍</span><h3 data-i18n="fan_welt_titel">Weltweit</h3><p data-i18n="fan_welt">Fanclubs („Casas do Benfica“) gibt es in Portugal und auf der ganzen Welt, auch in Deutschland.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="section">
+      <h2 class="section-title" data-i18n="quiz_titel">Benfica-Quiz</h2>
+      <p class="section-intro" data-i18n="quiz_intro">Wie gut kennst du die Adler?</p>
+      <div class="quiz-box">
+        <p id="quiz-frage" class="quiz-frage"></p>
+        <div id="quiz-antworten" class="quiz-antworten"></div>
+        <p id="quiz-feedback" class="quiz-feedback"></p>
+        <button id="quiz-weiter" class="btn btn-klein" hidden></button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Kader-Fenster -->
+  <div id="kader-modal" class="modal" hidden>
+    <div class="modal-inhalt">
+      <button class="modal-schliessen" aria-label="Schließen">✕</button>
+      <h2 class="section-title" data-i18n="kader_titel">Kader 2026/27</h2>
+      <p class="kader-stand" data-i18n="kader_stand">Trainer: Marco Silva · Stand: Herbst 2026</p>
+      <p class="kader-favorit" id="kader-favorit"></p>
+      <div id="kader-liste"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p data-i18n="footer_1">Eine Fan-Website · Erstellt mit ❤️ von Joao</p>
+    <p class="footer-klein" data-i18n="footer_2">Keine offizielle Seite von Sport Lisboa e Benfica.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
