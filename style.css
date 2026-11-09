@@ -182,7 +182,11 @@ h1, h2, h3 { font-family: "Bebas Neue", sans-serif; letter-spacing: 1px; margin:
 
 /* ===== Eusébio ===== */
 .section-eusebio {
-  background: linear-gradient(120deg, var(--schwarz) 0%, #2a0006 100%);
+  /* Foto von Eusébio: links sichtbar, rechts abgedunkelt für den Text */
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.2) 0%, rgba(17, 17, 17, 0.45) 28%, rgba(26, 0, 4, 0.88) 45%, rgba(26, 0, 4, 0.95) 100%),
+    url("img/eusebio.jpg") left 20% / cover no-repeat,
+    var(--schwarz);
   color: white; padding: 100px 32px; overflow: hidden;
 }
 .eusebio-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
@@ -351,3 +355,6 @@ h1, h2, h3 { font-family: "Bebas Neue", sans-serif; letter-spacing: 1px; margin:
     url("img/fans.jpg") center 40% / cover no-repeat;
   animation: none;
 }
+
+/* Die große 10 dezenter, damit sie das Foto nicht überdeckt */
+.section-eusebio .eusebio-nummer { opacity: 0.35; }
