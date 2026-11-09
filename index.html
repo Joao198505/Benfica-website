@@ -163,6 +163,9 @@
     <section id="geschichte" class="section">
       <h2 class="section-title" data-i18n="geschichte_titel">Geschichte</h2>
       <p class="section-intro" data-i18n="geschichte_intro">Klick auf ein Jahr, um mehr zu erfahren.</p>
+      <div class="geschichte-grid">
+      <div>
+      <h3 class="geschichte-unter" data-i18n="geschichte_verein">Der Verein</h3>
       <div class="timeline">
         <div class="timeline-item">
           <button class="timeline-year">1904</button>
@@ -188,6 +191,22 @@
           <button class="timeline-year" data-i18n="tl_heute_jahr">Heute</button>
           <div class="timeline-text" data-i18n="tl_heute">Benfica gehört zu den Vereinen mit den meisten Mitgliedern weltweit und ist bekannt für seine starke Nachwuchsakademie in Seixal.</div>
         </div>
+      </div>
+      </div>
+
+      <!-- Geschichte des Wappens (wird per JavaScript gefüllt) -->
+      <div class="wappen-box">
+        <h3 class="geschichte-unter" data-i18n="geschichte_wappen">Das Wappen</h3>
+        <div class="wappen-anzeige">
+          <img id="wappen-bild" src="" alt="">
+          <div>
+            <p class="wappen-jahre" id="wappen-jahre"></p>
+            <h4 class="wappen-name" id="wappen-name"></h4>
+            <p class="wappen-text" id="wappen-text"></p>
+          </div>
+        </div>
+        <div class="wappen-leiste" id="wappen-leiste"></div>
+      </div>
       </div>
     </section>
 

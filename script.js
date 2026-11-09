@@ -17,6 +17,7 @@ const pt = {
   countdown_titel: "Próximo jogo",
   btn_kader: "Ver o plantel atual", btn_entdecken: "Descobrir ↓",
   geschichte_titel: "História", geschichte_intro: "Clica num ano para saber mais.",
+  geschichte_verein: "O clube", geschichte_wappen: "O emblema",
   tl_1904: "A 28 de fevereiro de 1904 é fundado o clube em Lisboa, inicialmente com o nome Sport Lisboa. Poucos anos depois dá-se a fusão que origina o Sport Lisboa e Benfica.",
   tl_1961: "Em Berna, o Benfica vence o FC Barcelona na final e conquista a Taça dos Campeões Europeus, pondo fim ao domínio do Real Madrid.",
   tl_1962: "Revalidação do título: em Amesterdão, o Benfica bate o Real Madrid por 5-3. O jovem Eusébio marca dois golos na final.",
@@ -92,6 +93,7 @@ function setzeSprache(neu) {
   setzeAufLandeplatz();
   baueNews();
   baueVitrine();
+  baueWappen();
   aktualisiereCountdown();
   zeigeFrage();
   if (!modal.hidden) baueKader();
@@ -462,6 +464,66 @@ function baueVitrine() {
 }
 
 // ===== Zeitleiste =====
+// ===== Geschichte des Wappens =====
+// Quelle der Fakten: slbenfica.pt (Seite „Símbolos“)
+const wappen = [
+  { jahre: "1904–1906", bild: "img/wappen/1904.png",
+    name_de: "Sport Lisboa", name_pt: "Sport Lisboa",
+    text_de: "Das erste Wappen entsteht schon vor der Gründung am 28. Februar 1904: ein rot-weißer Schild mit den Buchstaben „S.L.“ und einem Ball, darüber der Adler mit dem Band „E Pluribus Unum“.",
+    text_pt: "O primeiro emblema nasce ainda antes da fundação, a 28 de fevereiro de 1904: um escudo vermelho e branco com as letras “S.L.” e uma bola, encimado pela águia com a fita “E Pluribus Unum”." },
+  { jahre: "1906–1908", bild: "img/wappen/1906.png",
+    name_de: "Grupo Sport Benfica", name_pt: "Grupo Sport Benfica",
+    text_de: "Der Grupo Sport Benfica, gegründet 1906, hat ein eigenes Wappen: einen Schild mit den Buchstaben „G.S.B.“ in einem Fahrradrad.",
+    text_pt: "O Grupo Sport Benfica, fundado em 1906, tem o seu próprio emblema: um escudo com as letras “G.S.B.” dentro de uma roda de bicicleta." },
+  { jahre: "1908–1930", bild: "img/wappen/1908.png",
+    name_de: "Sport Lisboa e Benfica", name_pt: "Sport Lisboa e Benfica",
+    text_de: "Nach der Fusion beider Vereine wird das Wappen des Sport Lisboa um das Fahrradrad ergänzt. Aus „S.L.“ wird „S.L.B.“.",
+    text_pt: "Depois da fusão dos dois clubes, o emblema do Sport Lisboa ganha a roda de bicicleta. “S.L.” passa a “S.L.B.”." },
+  { jahre: "1930–1961", bild: "img/wappen/1930.png",
+    name_de: "Die heutige Form entsteht", name_pt: "Nasce a forma atual",
+    text_de: "Ab 1930 bekommt das Wappen im Wesentlichen seine heutige Gestalt: goldener Adler, grün-rotes Band, blaue Schärpe mit „S.L.B.“ und ein Ball im Schild.",
+    text_pt: "A partir de 1930, o emblema ganha no essencial a forma atual: águia dourada, fita verde e vermelha, faixa azul com “S.L.B.” e uma bola no escudo." },
+  { jahre: "1961–1973", bild: "img/wappen/1961.png",
+    name_de: "Neue Farben", name_pt: "Novas cores",
+    text_de: "Der Aufbau bleibt gleich, aber die Farben ändern sich: Das Rad bekommt einen kräftigen orangeroten Ring, die Schärpe wird grün.",
+    text_pt: "A estrutura mantém-se, mas as cores mudam: a roda ganha um anel vermelho-alaranjado forte e a faixa passa a verde." },
+  { jahre: "1973–1999", bild: "img/wappen/1973.png",
+    name_de: "Zurück zu hellen Tönen", name_pt: "Regresso aos tons claros",
+    text_de: "Der Ring wird wieder hell, die Schärpe hellblau. Linien und Farben wirken klarer.",
+    text_pt: "O anel volta a ser claro e a faixa passa a azul-claro. As linhas e as cores ficam mais nítidas." },
+  { jahre: "seit 1999", jahre_pt: "desde 1999", bild: "img/wappen/1999.png",
+    name_de: "Das heutige Wappen", name_pt: "O emblema atual",
+    text_de: "Das Wappen wird leicht überarbeitet: Die ursprünglichen Linien bleiben, der Adler bekommt eine neue Position. So sieht es bis heute aus.",
+    text_pt: "O emblema é ligeiramente redesenhado: mantém as linhas originais e a águia muda de posição. É assim que se apresenta até hoje." }
+];
+let wappenAuswahl = 0;
+
+function zeigeWappen(i) {
+  wappenAuswahl = i;
+  const w = wappen[i];
+  const bild = document.getElementById("wappen-bild");
+  bild.src = w.bild;
+  bild.alt = sprache === "pt" ? w.name_pt : w.name_de;
+  document.getElementById("wappen-jahre").textContent = sprache === "pt" && w.jahre_pt ? w.jahre_pt : w.jahre;
+  document.getElementById("wappen-name").textContent = sprache === "pt" ? w.name_pt : w.name_de;
+  document.getElementById("wappen-text").textContent = sprache === "pt" ? w.text_pt : w.text_de;
+  document.querySelectorAll(".wappen-knopf").forEach((k, n) => k.classList.toggle("aktiv", n === i));
+}
+
+function baueWappen() {
+  const leiste = document.getElementById("wappen-leiste");
+  leiste.innerHTML = "";
+  wappen.forEach((w, i) => {
+    const knopf = document.createElement("button");
+    knopf.className = "wappen-knopf";
+    const jahr = w.jahre.match(/\d{4}/)[0];
+    knopf.innerHTML = `<img src="${w.bild}" alt="" loading="lazy"><span>${jahr}</span>`;
+    knopf.addEventListener("click", () => zeigeWappen(i));
+    leiste.appendChild(knopf);
+  });
+  zeigeWappen(wappenAuswahl);
+}
+
 document.querySelectorAll(".timeline-year").forEach(button =>
   button.addEventListener("click", () => button.parentElement.classList.toggle("offen"))
 );
