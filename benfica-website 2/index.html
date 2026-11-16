@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benfica – Die Adler aus Lissabon</title>
+  <meta name="description" content="Fanseite über Benfica Lissabon: nächstes Spiel mit Countdown, News, Tabelle, Geschichte, Trophäen und Quiz.">
+  <!-- Vorschau beim Teilen (WhatsApp, Instagram, X …) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benfica-website.netlify.app/">
+  <meta property="og:title" content="Benfica – Die Adler aus Lissabon">
+  <meta property="og:description" content="Fanseite mit Countdown zum nächsten Spiel, News, Tabelle, Geschichte, Trophäen und Quiz.">
+  <meta property="og:image" content="https://benfica-website.netlify.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Schriften liegen lokal im Ordner fonts/ (keine Verbindung zu Google) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Konfetti-Leinwand -->
+  <canvas id="konfetti"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#start" class="nav-logo">BENFICA</a>
+    <ul class="nav-links">
+      <li><a href="#" class="kader-oeffnen" data-i18n="nav_kader">Kader</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#geschichte" data-i18n="nav_geschichte">Geschichte</a></li>
+      <li><a href="#eusebio">Eusébio</a></li>
+      <li><a href="#titel" data-i18n="nav_titel">Titel</a></li>
+      <li><a href="#stadion" data-i18n="nav_stadion">Stadion</a></li>
+      <li><a href="#fans">Fans</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+    </ul>
+    <div class="nav-rechts">
+      <div class="sprache">
+        <button data-lang="de" class="aktiv">DE</button>
+        <button data-lang="pt">PT</button>
+      </div>
+      <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+    </div>
+  </nav>
+
+  <!-- Startbereich -->
+  <header id="start" class="hero">
+    <!-- Flutlicht-Strahlen -->
+    <div class="flutlicht flutlicht-1"></div>
+    <div class="flutlicht flutlicht-2"></div>
+
+    <div class="hero-inner">
+      <p class="hero-kicker" data-i18n="hero_kicker">Sport Lisboa e Benfica · seit 1904</p>
+      <div class="titel-wrap">
+        <!-- Historisches Wappen von 1930 (gemeinfrei, Quelle im Footer) -->
+        <img class="hero-logo" src="img/wappen/1930.png" alt="" onerror="this.style.display='none'">
+        <h1 data-i18n="hero_titel">Die Adler<br>aus Lissabon</h1>
+      </div>
+      <p class="hero-text" data-i18n="hero_text">Portugals Rekordmeister, zweifacher Europapokalsieger und ein Verein, der für Millionen Menschen mehr ist als Fußball.</p>
+
+      <div class="hero-stats">
+        <div class="stat"><span id="jahre" class="stat-zahl">120+</span><span class="stat-label" data-i18n="stat_jahre">Jahre Geschichte</span></div>
+        <div class="stat"><span class="stat-zahl">38</span><span class="stat-label" data-i18n="stat_meister">Meistertitel (Rekord)</span></div>
+        <div class="stat"><span class="stat-zahl">2×</span><span class="stat-label" data-i18n="stat_europa">Europapokal der Landesmeister</span></div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown">
+        <p class="countdown-titel" data-i18n="countdown_titel">Nächstes Spiel</p>
+        <p class="countdown-spiel" id="countdown-spiel"></p>
+        <div class="countdown-zahlen" id="countdown-zahlen"></div>
+      </div>
+
+      <div class="hero-buttons">
+        <button class="btn kader-oeffnen" data-i18n="btn_kader">Aktuellen Kader ansehen</button>
+        <button class="btn btn-gold" id="carrega">Carrega Benfica! 🎉</button>
+        <a href="#geschichte" class="btn btn-outline" data-i18n="btn_entdecken">Entdecken ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- News -->
+    <section id="news" class="section-news">
+      <div class="news-inner">
+        <h2 class="section-title">News</h2>
+        <p class="section-intro" data-i18n="news_intro">Das Neueste rund um die Adler – in eigenen Worten zusammengefasst, mit Link zum Originalartikel.</p>
+        <!-- Saison: letzte Ergebnisse und Tabelle (Daten in script.js) -->
+        <div class="saison-grid">
+          <div class="saison-karte">
+            <h3 data-i18n="ergebnisse_titel">Letzte Ergebnisse</h3>
+            <ul class="ergebnis-liste" id="ergebnis-liste"></ul>
+          </div>
+          <div class="saison-karte">
+            <h3 data-i18n="tabelle_titel">Tabelle Liga Portugal</h3>
+            <table class="tabelle" id="tabelle"></table>
+            <p class="tabelle-stand" id="tabelle-stand"></p>
+          </div>
+        </div>
+        <div class="news-grid" id="news-grid"></div>
+        <p class="news-stand" id="news-stand"></p>
+      </div>
+    </section>
+
+    <!-- Geschichte -->
+    <section id="geschichte" class="section">
+      <h2 class="section-title" data-i18n="geschichte_titel">Geschichte</h2>
+      <p class="section-intro" data-i18n="geschichte_intro">Klick auf ein Jahr, um mehr zu erfahren.</p>
+      <div class="geschichte-grid">
+      <div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <button class="timeline-year">1904</button>
+          <div class="timeline-text" data-i18n="tl_1904">Am 28. Februar 1904 wird der Verein in Lissabon gegründet, zunächst unter dem Namen Sport Lisboa. Wenige Jahre später folgt die Fusion zum Sport Lisboa e Benfica.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">1961</button>
+          <div class="timeline-text" data-i18n="tl_1961">Benfica gewinnt im Finale in Bern gegen den FC Barcelona den Europapokal der Landesmeister und beendet damit die Vorherrschaft von Real Madrid.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">1962</button>
+          <div class="timeline-text" data-i18n="tl_1962">Titelverteidigung: In Amsterdam schlägt Benfica Real Madrid mit 5:3. Der junge Eusébio trifft im Finale doppelt.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">1966</button>
+          <div class="timeline-text" data-i18n="tl_1966">Eusébio wird bei der WM in England mit Portugal Dritter und Torschützenkönig des Turniers. Er wird zum ersten großen Weltstar des Vereins.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year">2003</button>
+          <div class="timeline-text" data-i18n="tl_2003">Das neue Estádio da Luz wird eröffnet. Ein Jahr später ist es Schauplatz des EM-Finales 2004.</div>
+        </div>
+        <div class="timeline-item">
+          <button class="timeline-year" data-i18n="tl_heute_jahr">Heute</button>
+          <div class="timeline-text" data-i18n="tl_heute">Benfica gehört zu den Vereinen mit den meisten Mitgliedern weltweit und ist bekannt für seine starke Nachwuchsakademie in Seixal.</div>
+        </div>
+      </div>
+      </div>
+
+      </div>
+    </section>
+
+    <!-- Eusébio -->
+    <section id="eusebio" class="section-eusebio">
+      <div class="eusebio-inner">
+        <div class="eusebio-text">
+          <p class="hero-kicker" data-i18n="eu_kicker">O Pantera Negra · 1942–2014</p>
+          <div class="eusebio-kopf"><span class="eusebio-nummer">10</span><h2>Eusébio</h2></div>
+          <p data-i18n="eu_text">Der „Schwarze Panther“ kam 1960 aus Mosambik nach Lissabon und wurde zum größten Spieler der Vereinsgeschichte. Mit seiner Schnelligkeit und seinem gewaltigen Schuss prägte er eine ganze Ära. Vor dem Estádio da Luz erinnert eine Statue an ihn, seit 2015 ruht er im Nationalpantheon in Lissabon.</p>
+          <div class="eusebio-stats">
+            <div><span class="stat-zahl">473</span><span class="stat-label" data-i18n="eu_tore">Pflichtspieltore für Benfica</span></div>
+            <div><span class="stat-zahl">11</span><span class="stat-label" data-i18n="eu_meister">Meistertitel</span></div>
+            <div><span class="stat-zahl">1965</span><span class="stat-label">Ballon d'Or</span></div>
+            <div><span class="stat-zahl">2×</span><span class="stat-label" data-i18n="eu_schuh">Goldener Schuh</span></div>
+            <div><span class="stat-zahl">9</span><span class="stat-label" data-i18n="eu_wm">Tore bei der WM 1966</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trophäen-Vitrine -->
+    <section id="titel" class="section">
+      <h2 class="section-title" data-i18n="titel_titel">Trophäen-Vitrine</h2>
+      <p class="section-intro" data-i18n="titel_intro">Klick auf einen Pokal. Stand: Sommer 2026.</p>
+      <div class="vitrine" id="vitrine"></div>
+      <p class="pokal-info" id="pokal-info"></p>
+    </section>
+
+    <!-- Stadion -->
+    <section id="stadion" class="section section-dark">
+      <div class="split">
+        <div>
+          <h2 class="section-title">Estádio da Luz</h2>
+          <p data-i18n="stadion_1">Das „Stadion des Lichts“ ist die Heimat von Benfica und eines der größten Stadien Portugals. Hier fanden unter anderem das EM-Finale 2004 und das Champions-League-Finale 2014 statt.</p>
+          <p data-i18n="stadion_2">Vor vielen Heimspielen kreist ein echter Adler durch das Stadion und landet anschließend auf dem Vereinswappen. Für viele Fans ist das der emotionalste Moment des Spieltags.</p>
+        </div>
+        <div class="fakten-box">
+          <h3 data-i18n="fakten">Fakten</h3>
+          <ul>
+            <li><strong data-i18n="f_ort">Ort:</strong> Lissabon</li>
+            <li><strong data-i18n="f_eroeffnet">Eröffnet:</strong> 2003</li>
+            <li><strong data-i18n="f_kap">Kapazität:</strong> <span data-i18n="f_kap_wert">über 60.000</span></li>
+            <li><strong data-i18n="f_spitz">Spitzname:</strong> A Catedral</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legenden -->
+    <section id="legenden" class="section">
+      <h2 class="section-title" data-i18n="legenden_titel">Legenden</h2>
+      <div class="karten">
+        <article class="karte">
+          <span class="karte-nummer">C</span>
+          <h3>Mário Coluna</h3>
+          <p class="karte-rolle" data-i18n="leg_coluna_rolle">Mittelfeld · 1954–1970</p>
+          <p data-i18n="leg_coluna">Der legendäre Kapitän der goldenen Generation, die zweimal den Europapokal holte.</p>
+        </article>
+        <article class="karte">
+          <span class="karte-nummer">9</span>
+          <h3>José Águas</h3>
+          <p class="karte-rolle" data-i18n="leg_aguas_rolle">Stürmer · 1950–1963</p>
+          <p data-i18n="leg_aguas">Torjäger und Kapitän beim ersten Europapokalsieg 1961.</p>
+        </article>
+        <article class="karte">
+          <span class="karte-nummer">10</span>
+          <h3>Rui Costa</h3>
+          <p class="karte-rolle" data-i18n="leg_rui_rolle">Mittelfeld · aus der eigenen Jugend</p>
+          <p data-i18n="leg_rui">Eleganter Spielmacher, der nach Jahren in Italien zu seinem Herzensverein zurückkehrte.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Fans mit Choreo -->
+    <section id="fans" class="section-rot choreo">
+      <div class="fans-inner">
+        <h2 class="section-title">Ser Benfiquista</h2>
+        <p class="zitat" data-i18n="fans_zitat">Aus vielen wird eins: „E Pluribus Unum“ ist das Motto des Vereins.</p>
+        <div class="fan-grid">
+          <div class="fan-item"><span>🦅</span><h3>As Águias</h3><p data-i18n="fan_aguias">Der Adler steht für Stärke und Unabhängigkeit und ist das Symbol des Vereins.</p></div>
+          <div class="fan-item"><span>🔴</span><h3>Os Encarnados</h3><p data-i18n="fan_encarnados">„Die Roten“: Spitzname wegen der traditionellen roten Trikots.</p></div>
+          <div class="fan-item"><span>🌍</span><h3 data-i18n="fan_welt_titel">Weltweit</h3><p data-i18n="fan_welt">Fanclubs („Casas do Benfica“) gibt es in Portugal und auf der ganzen Welt, auch in Deutschland.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="section">
+      <h2 class="section-title" data-i18n="quiz_titel">Benfica-Quiz</h2>
+      <p class="section-intro" data-i18n="quiz_intro">Wie gut kennst du die Adler?</p>
+      <div class="quiz-box">
+        <p id="quiz-frage" class="quiz-frage"></p>
+        <div id="quiz-antworten" class="quiz-antworten"></div>
+        <p id="quiz-feedback" class="quiz-feedback"></p>
+        <button id="quiz-weiter" class="btn btn-klein" hidden></button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Kader-Fenster -->
+  <div id="kader-modal" class="modal" hidden>
+    <div class="modal-inhalt">
+      <button class="modal-schliessen" aria-label="Schließen">✕</button>
+      <h2 class="section-title" data-i18n="kader_titel">Kader 2026/27</h2>
+      <p class="kader-stand" data-i18n="kader_stand">Trainer: Marco Silva · Stand: Herbst 2026</p>
+      <p class="kader-favorit" id="kader-favorit"></p>
+      <div id="kader-liste"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p data-i18n="footer_1">Eine Fan-Website · Erstellt mit ❤️ von Joao</p>
+    <p class="footer-klein" data-i18n="footer_2">Keine offizielle Seite von Sport Lisboa e Benfica.</p>
+
+    <!-- Rechtliche Hinweise zum Aufklappen -->
+    <div class="footer-rechtliches">
+      <details id="datenschutz">
+        <summary data-i18n="ds_titel">Datenschutz</summary>
+        <div data-i18n="ds_text">
+          <p><strong>Verantwortlich</strong> für die Datenverarbeitung auf dieser Seite ist der Betreiber dieser Fanseite. Name und Kontaktdaten werden in Kürze im Impressum ergänzt.</p>
+          <p><strong>Was diese Seite nicht macht:</strong> keine Cookies, keine Analyse- oder Tracking-Dienste, keine Werbung, keine Kontaktformulare, keine eingebetteten Videos oder Social-Media-Inhalte. Schriften und Bilder werden direkt von dieser Seite geladen, es gibt keine Verbindung zu Google Fonts oder anderen Drittanbietern.</p>
+          <p><strong>Hosting und Server-Logdateien:</strong> Die Seite liegt bei Netlify, Inc. (USA) und als Artifact auf claude.ai bei Anthropic PBC (USA). Beim Aufruf verarbeitet der jeweilige Anbieter technisch notwendige Daten, vor allem IP-Adresse, Datum und Uhrzeit, aufgerufene Datei, Browser und Betriebssystem. Das ist nötig, um die Seite auszuliefern und sicher zu betreiben. Rechtsgrundlage ist mein berechtigtes Interesse an einem funktionierenden Angebot (Art. 6 Abs. 1 lit. f DSGVO). Dabei können Daten in die USA übermittelt werden. Welche Garantien die Anbieter dafür vorsehen, zum Beispiel EU-Standardvertragsklauseln oder das EU-US Data Privacy Framework, steht in den Datenschutzhinweisen von <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Netlify</a> und <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>.</p>
+          <p><strong>Speicher im Browser:</strong> Wenn du die Sprache wechselst oder einen Lieblingsspieler markierst, wird diese Auswahl im Speicher deines Browsers abgelegt (localStorage), damit sie beim nächsten Besuch noch da ist. Die Angaben verlassen dein Gerät nicht und werden von mir nicht ausgewertet. Das ist für diese von dir gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Du kannst die Daten jederzeit über die Einstellungen deines Browsers löschen.</p>
+          <p><strong>Links zu anderen Seiten:</strong> Die News verlinken auf Artikel von Nachrichtenseiten. Erst wenn du einen Link anklickst, wird die fremde Seite geladen. Dort gelten deren Datenschutzbestimmungen.</p>
+          <p><strong>Deine Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung, auf Datenübertragbarkeit sowie auf Widerspruch gegen die Verarbeitung (Art. 15 bis 21 DSGVO). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO).</p>
+        </div>
+      </details>
+      <details id="bildquellen">
+        <summary data-i18n="bq_titel">Bildquellen und Lizenzen</summary>
+        <div data-i18n="bq_text">
+          <ul>
+            <li><strong>Startbild:</strong> „<a href="https://commons.wikimedia.org/wiki/File:Estadio_Da_Luz_Benfica.jpg" target="_blank" rel="noopener">Estadio Da Luz Benfica</a>“ von 4theliberty, Wikimedia Commons, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de" target="_blank" rel="noopener">CC0 1.0</a> (gemeinfrei).</li>
+            <li><strong>Stadion:</strong> „<a href="https://commons.wikimedia.org/wiki/File:Estadio_Benfica_April_2013-1.jpg" target="_blank" rel="noopener">Estadio Benfica April 2013-1</a>“ von Alvesgaspar, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Verkleinert und abgedunkelt.</li>
+            <li><strong>Eusébio:</strong> „<a href="https://commons.wikimedia.org/wiki/File:Eus%C3%A9bio%27s_European_Golden_Shoes_at_Museu_Cosme_Dami%C3%A3o.JPG" target="_blank" rel="noopener">Eusébio's European Golden Shoes at Museu Cosme Damião</a>“ von Threeohsix, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Verkleinert und abgedunkelt.</li>
+            <li><strong>Fans und Vorschaubild zum Teilen:</strong> „<a href="https://commons.wikimedia.org/wiki/File:The_Da_Luz_Stadium_before_a_game_between_SL_Benfica_and_FC_Porto.jpg" target="_blank" rel="noopener">The Da Luz Stadium before a game between SL Benfica and FC Porto</a>“ von Vincenzo.togni, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Verkleinert und rot eingefärbt, im Vorschaubild mit Text und Wappen kombiniert. Die bearbeiteten Bilder stehen ebenfalls unter CC BY-SA 4.0.</li>
+            <li><strong>Historisches Wappen von 1930</strong> (Startbereich und Vorschaubild): gemeinfrei, da der Urheber vor über 70 Jahren gestorben ist. Quelle: <a href="https://commons.wikimedia.org/wiki/File:Emblema_Benfica_1930_(Sem_fundo).png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+            <li><strong>Selbst gestaltet:</strong> Pokale und Trikots.</li>
+            <li><strong>Schriften:</strong> Inter und Bebas Neue unter der SIL Open Font License 1.1 (Lizenztexte: <a href="fonts/OFL-Inter.txt" target="_blank" rel="noopener">Inter</a>, <a href="fonts/OFL-BebasNeue.txt" target="_blank" rel="noopener">Bebas Neue</a>).</li>
+            <li><strong>Texte:</strong> Die News sind eigene Zusammenfassungen. Die Rechte an den Originalartikeln liegen bei den verlinkten Medien.</li>
+          </ul>
+          <p>Der Name „Benfica“ und das Vereinswappen sind Marken von Sport Lisboa e Benfica. Sie werden hier nur genutzt, um den Verein zu benennen. Wer Rechte an Inhalten dieser Seite hat und eine Änderung wünscht, kann sich jederzeit beim Betreiber melden.</p>
+        </div>
+      </details>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
