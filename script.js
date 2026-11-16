@@ -17,7 +17,7 @@ const pt = {
   countdown_titel: "Próximo jogo",
   btn_kader: "Ver o plantel atual", btn_entdecken: "Descobrir ↓",
   geschichte_titel: "História", geschichte_intro: "Clica num ano para saber mais.",
-  geschichte_verein: "O clube", geschichte_wappen: "O emblema",
+  geschichte_verein: "O clube",
   tl_1904: "A 28 de fevereiro de 1904 é fundado o clube em Lisboa, inicialmente com o nome Sport Lisboa. Poucos anos depois dá-se a fusão que origina o Sport Lisboa e Benfica.",
   tl_1961: "Em Berna, o Benfica vence o FC Barcelona na final e conquista a Taça dos Campeões Europeus, pondo fim ao domínio do Real Madrid.",
   tl_1962: "Revalidação do título: em Amesterdão, o Benfica bate o Real Madrid por 5-3. O jovem Eusébio marca dois golos na final.",
@@ -45,7 +45,29 @@ const pt = {
   kader_titel: "Plantel 2026/27", kader_stand: "Treinador: Marco Silva · Atualizado: outono de 2026",
   news_intro: "O mais recente sobre as Águias – resumido por palavras nossas, com link para o artigo original.",
   footer_1: "Um site de adeptos · Feito com ❤️ pelo Joao",
-  footer_2: "Não é um site oficial do Sport Lisboa e Benfica."
+  footer_2: "Não é um site oficial do Sport Lisboa e Benfica.",
+  ergebnisse_titel: "Últimos resultados", tabelle_titel: "Classificação Liga Portugal",
+  im_titel: "Ficha técnica",
+  im_text: "",
+  ds_titel: "Privacidade",
+  ds_text: `<p><strong>Responsável</strong> pelo tratamento de dados neste site é o autor deste site de adeptos. O nome e os contactos serão acrescentados em breve na ficha técnica.</p>
+          <p><strong>O que este site não faz:</strong> não usa cookies, serviços de análise ou rastreio, publicidade, formulários de contacto, vídeos incorporados nem conteúdos de redes sociais. As fontes e imagens são carregadas diretamente deste site, sem ligação ao Google Fonts ou a outros terceiros.</p>
+          <p><strong>Alojamento e registos do servidor:</strong> o site está alojado na Netlify, Inc. (EUA) e, como Artifact, no claude.ai da Anthropic PBC (EUA). Ao abrir a página, o respetivo fornecedor trata dados técnicos necessários, sobretudo endereço IP, data e hora, ficheiro pedido, navegador e sistema operativo. Isto é necessário para entregar a página e a manter segura. A base legal é o interesse legítimo num serviço funcional (art. 6.º, n.º 1, al. f) do RGPD). Os dados podem ser transferidos para os EUA. As garantias previstas pelos fornecedores para isso, por exemplo cláusulas contratuais-tipo da UE ou o EU-US Data Privacy Framework, constam das informações de privacidade da <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Netlify</a> e da <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>.</p>
+          <p><strong>Memória do navegador:</strong> se mudares o idioma ou marcares um jogador preferido, essa escolha fica guardada no teu navegador (localStorage), para estar disponível na próxima visita. Estes dados não saem do teu dispositivo e não são analisados por mim. Isto é estritamente necessário para a função que pediste (§ 25 (2) n.º 2 TDDDG). Podes apagá-los a qualquer momento nas definições do navegador.</p>
+          <p><strong>Links para outros sites:</strong> as notícias têm links para artigos de sites noticiosos. A página externa só é carregada quando clicas no link; aí aplicam-se as respetivas políticas de privacidade.</p>
+          <p><strong>Os teus direitos:</strong> tens direito de acesso, retificação, apagamento e limitação do tratamento, portabilidade dos dados e oposição ao tratamento (art. 15.º a 21.º do RGPD). Podes ainda apresentar reclamação junto de uma autoridade de controlo (art. 77.º do RGPD).</p>`,
+  bq_titel: "Créditos das imagens e licenças",
+  bq_text: `<ul>
+            <li><strong>Imagem inicial:</strong> “<a href="https://commons.wikimedia.org/wiki/File:Estadio_Da_Luz_Benfica.jpg" target="_blank" rel="noopener">Estadio Da Luz Benfica</a>” de 4theliberty, Wikimedia Commons, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.pt" target="_blank" rel="noopener">CC0 1.0</a> (domínio público).</li>
+            <li><strong>Estádio:</strong> “<a href="https://commons.wikimedia.org/wiki/File:Estadio_Benfica_April_2013-1.jpg" target="_blank" rel="noopener">Estadio Benfica April 2013-1</a>” de Alvesgaspar, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Reduzida e escurecida.</li>
+            <li><strong>Eusébio:</strong> “<a href="https://commons.wikimedia.org/wiki/File:Eus%C3%A9bio%27s_European_Golden_Shoes_at_Museu_Cosme_Dami%C3%A3o.JPG" target="_blank" rel="noopener">Eusébio's European Golden Shoes at Museu Cosme Damião</a>” de Threeohsix, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Reduzida e escurecida.</li>
+            <li><strong>Adeptos e imagem de pré-visualização:</strong> “<a href="https://commons.wikimedia.org/wiki/File:The_Da_Luz_Stadium_before_a_game_between_SL_Benfica_and_FC_Porto.jpg" target="_blank" rel="noopener">The Da Luz Stadium before a game between SL Benfica and FC Porto</a>” de Vincenzo.togni, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Reduzida e com tonalidade vermelha; na pré-visualização combinada com texto e emblema. As imagens editadas também estão sob CC BY-SA 4.0.</li>
+            <li><strong>Emblema histórico de 1930</strong> (início e imagem de pré-visualização): domínio público, pois o autor morreu há mais de 70 anos. Fonte: <a href="https://commons.wikimedia.org/wiki/File:Emblema_Benfica_1930_(Sem_fundo).png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+            <li><strong>Criação própria:</strong> taças e camisolas.</li>
+            <li><strong>Fontes:</strong> Inter e Bebas Neue sob a SIL Open Font License 1.1 (licenças: <a href="fonts/OFL-Inter.txt" target="_blank" rel="noopener">Inter</a>, <a href="fonts/OFL-BebasNeue.txt" target="_blank" rel="noopener">Bebas Neue</a>).</li>
+            <li><strong>Textos:</strong> as notícias são resumos próprios. Os direitos dos artigos originais pertencem aos meios de comunicação indicados.</li>
+          </ul>
+          <p>O nome “Benfica” e o emblema do clube são marcas do Sport Lisboa e Benfica, usadas aqui apenas para identificar o clube. Quem tiver direitos sobre conteúdos deste site e desejar uma alteração pode contactar o autor a qualquer momento.</p>`
 };
 
 // Kurze Texte, die per JavaScript erzeugt werden
@@ -59,7 +81,9 @@ const t = {
     weiter: "Nächste Frage →", ergebnis: "Ergebnis anzeigen", nochmal: "Nochmal spielen",
     punkte: (p, n) => `Du hast ${p} von ${n} Fragen richtig!`,
     perfekt: "Echter Benfiquista! 🔴⚪", geht: "Da geht noch was – versuch es nochmal!",
-    menue: "Menü öffnen"
+    menue: "Menü öffnen",
+    sp: "Sp.", pkt: "Pkt.", tabelleStand: (r, d) => `Nach dem ${r}. Spieltag · Stand: ${d}`,
+    s: "S", u: "U", n: "N"
   },
   pt: {
     tage: "Dias", std: "Horas", min: "Min", sek: "Seg",
@@ -70,7 +94,9 @@ const t = {
     weiter: "Próxima pergunta →", ergebnis: "Ver resultado", nochmal: "Jogar outra vez",
     punkte: (p, n) => `Acertaste ${p} de ${n} perguntas!`,
     perfekt: "Benfiquista a sério! 🔴⚪", geht: "Ainda dá para melhorar – tenta outra vez!",
-    menue: "Abrir menu"
+    menue: "Abrir menu",
+    sp: "J", pkt: "Pts", tabelleStand: (r, d) => `Após a ${r}.ª jornada · Atualizado: ${d}`,
+    s: "V", u: "E", n: "D"
   }
 };
 
@@ -90,10 +116,9 @@ function setzeSprache(neu) {
   document.querySelectorAll(".sprache button").forEach(b =>
     b.classList.toggle("aktiv", b.dataset.lang === neu)
   );
-  setzeAufLandeplatz();
   baueNews();
+  baueSaison();
   baueVitrine();
-  baueWappen();
   aktualisiereCountdown();
   zeigeFrage();
   if (!modal.hidden) baueKader();
@@ -113,93 +138,6 @@ document.getElementById("jahre").textContent = jahre;
 const links = document.querySelector(".nav-links");
 document.querySelector(".nav-toggle").addEventListener("click", () => links.classList.toggle("offen"));
 links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("offen")));
-
-// ===== Fliegender Adler, landet auf dem letzten Buchstaben =====
-const adler = document.getElementById("adler");
-const hero = document.querySelector(".hero");
-const ADLER_BREITE = 260;              // Breite im Flug (px)
-let adlerGelandet = false;
-
-// Letzten Buchstaben der Überschrift markieren (N bei „Lissabon“)
-function markiereLandeplatz() {
-  const h1 = document.querySelector(".hero h1");
-  if (h1.querySelector(".landeplatz")) return;
-  const html = h1.innerHTML.trimEnd();
-  h1.innerHTML = html.slice(0, -1) + `<span class="landeplatz">${html.slice(-1)}</span>`;
-}
-
-// Punkt, an dem die Krallen landen: Mitte oben auf dem Buchstaben
-function landepunkt() {
-  const span = document.querySelector(".landeplatz");
-  const r = span.getBoundingClientRect();
-  const h = hero.getBoundingClientRect();
-  const stil = getComputedStyle(span);
-  const schrift = parseFloat(stil.fontSize);
-  // Abstand von der Oberkante der Zeile bis zur Oberkante des Buchstabens messen
-  let abstand = schrift * 0.18;
-  try {
-    const m = document.createElement("canvas").getContext("2d");
-    m.font = `${stil.fontWeight} ${stil.fontSize} ${stil.fontFamily}`;
-    const mass = m.measureText(span.textContent);
-    if (mass.fontBoundingBoxAscent) {
-      abstand = mass.fontBoundingBoxAscent - mass.actualBoundingBoxAscent
-              + (r.height - mass.fontBoundingBoxAscent - mass.fontBoundingBoxDescent) / 2;
-    }
-  } catch (e) {}
-  return {
-    x: r.left - h.left + r.width / 2,
-    y: r.top - h.top + abstand,          // Oberkante des Buchstabens
-    groesse: Math.min(1, (schrift * 1.4) / ADLER_BREITE)
-  };
-}
-
-// Die Krallen sitzen bei 50 % Breite / 35 % Höhe der Grafik
-function stellung(x, y, skala, drehung) {
-  return `translate(${x - ADLER_BREITE * 0.5}px, ${y - ADLER_BREITE * 0.35}px) scale(${skala}) rotate(${drehung}deg)`;
-}
-
-function lassAdlerFliegen() {
-  markiereLandeplatz();
-  adlerGelandet = false;
-  adler.classList.remove("gelandet");
-  adler.style.transformOrigin = `${ADLER_BREITE * 0.5}px ${ADLER_BREITE * 0.35}px`;
-
-  const ziel = landepunkt();
-  const B = hero.clientWidth, H = hero.clientHeight;
-
-  const flug = adler.animate([
-    { transform: stellung(-200, H * 0.8, 0.55, -12), opacity: 0, offset: 0 },
-    { opacity: 1, offset: 0.08 },
-    { transform: stellung(B * 0.45, H * 0.15, 0.95, 6), offset: 0.45 },
-    { transform: stellung(B * 0.85, H * 0.3, 0.9, -6), offset: 0.65 },
-    { transform: stellung(ziel.x + 60, ziel.y - 90, ziel.groesse * 1.15, -8), offset: 0.85 },
-    { transform: stellung(ziel.x, ziel.y, ziel.groesse, 0), opacity: 1, offset: 1 }
-  ], { duration: 6500, easing: "ease-in-out", fill: "forwards" });
-
-  flug.onfinish = () => {
-    adlerGelandet = true;
-    adler.classList.add("gelandet");
-    flug.commitStyles?.();
-    flug.cancel();
-    setzeAufLandeplatz();
-  };
-}
-
-// Beim Ändern der Fenstergröße oder Sprache auf dem Buchstaben bleiben
-function setzeAufLandeplatz() {
-  if (!adlerGelandet) return;
-  markiereLandeplatz();
-  const ziel = landepunkt();
-  adler.style.opacity = 1;
-  adler.style.transform = stellung(ziel.x, ziel.y, ziel.groesse, 0);
-}
-window.addEventListener("resize", setzeAufLandeplatz);
-
-window.addEventListener("load", () => {
-  // erst starten, wenn die Schrift geladen ist, damit der Landepunkt stimmt
-  (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(lassAdlerFliegen, 600));
-});
-document.querySelector(".nav-logo").addEventListener("click", lassAdlerFliegen);
 
 // ===== Konfetti =====
 const leinwand = document.getElementById("konfetti");
@@ -262,10 +200,9 @@ document.getElementById("carrega").addEventListener("click", konfetti);
 // Ist die Uhrzeit noch nicht bekannt, nur das Datum eintragen: "2026-11-22"
 // Quelle: Flashscore / OneFootball
 const spiele = [
-  { heim: "Estrela da Amadora", gast: "Benfica", anstoss: "2026-11-08 21:30", wettbewerb: "Liga Portugal" },
   { heim: "Torreense", gast: "Benfica", anstoss: "2026-11-22 21:45", wettbewerb: "Taça de Portugal" },
   { heim: "Viktoria Pilsen", gast: "Benfica", anstoss: "2026-11-26 18:45", wettbewerb: "Europa League" },
-  { heim: "Benfica", gast: "Famalicão", anstoss: "2026-11-30", wettbewerb: "Liga Portugal" }
+  { heim: "Benfica", gast: "Famalicão", anstoss: "2026-11-30 21:15", wettbewerb: "Liga Portugal" }
 ];
 
 // Deutsche Zeit in einen echten Zeitpunkt umrechnen (Winter- und Sommerzeit automatisch)
@@ -335,55 +272,55 @@ setInterval(aktualisiereCountdown, 1000);
 // ===== News =====
 // Neueste Meldung oben. Texte in eigenen Worten, mit Link zum Originalartikel.
 // "datum" im Format JJJJ-MM-TT (leer lassen, wenn unbekannt).
-const newsStand = "2026-11-09";
+const newsStand = "2026-11-16";
 const news = [
   {
-    datum: "2026-11-08", kat_de: "Liga Portugal", kat_pt: "Liga Portugal",
-    titel_de: "Pavlidis rettet den Sieg in Amadora",
-    titel_pt: "Pavlidis decide na Amadora",
-    text_de: "Benfica gewinnt bei Estrela da Amadora mit 3:2. Prestianni bringt die Adler in Führung, nach einem Eigentor von Schappo gleicht Estrela zweimal aus, ehe Pavlidis in der Nachspielzeit den Siegtreffer erzielt. Der Rückstand auf Spitzenreiter FC Porto bleibt bei fünf Punkten, auf Sporting sind es vier.",
-    text_pt: "O Benfica ganhou por 3-2 na Amadora. Prestianni abriu o marcador e, depois de um autogolo de Schappo, o Estrela empatou por duas vezes, até Pavlidis resolver já nos descontos. As águias continuam a cinco pontos do líder FC Porto e a quatro do Sporting.",
-    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/futebol-liga-portugal-betclic-a-obra-de-arte-antes-da-morte-do-artista-benfica-vence-estrela-da-amadora/pjHRNsoK/"
+    datum: "", kat_de: "Verein", kat_pt: "Clube",
+    titel_de: "Bah kann sich Karriereende bei Benfica vorstellen",
+    titel_pt: "Bah admite acabar a carreira no Benfica",
+    text_de: "Alexander Bah sagte in einem Interview mit dem dänischen Tipsbladet, dass er sich derzeit keinen anderen Klub vorstellen kann und seine Laufbahn bei Benfica beenden könnte – auch wenn ihn ein kleiner Teil irgendwann zurück nach Dänemark zieht. Zuvor stand er beim 4:1-Sieg Dänemarks gegen Portugal in der Nations League in der Startelf. Sein Vertrag in Lissabon läuft bis Juni 2029.",
+    text_pt: "Em entrevista ao dinamarquês Tipsbladet, Alexander Bah disse que neste momento não se imagina noutro clube e que pode terminar a carreira no Benfica, embora uma pequena parte dele queira um dia regressar à Dinamarca. O lateral foi titular na vitória da Dinamarca por 4-1 sobre Portugal, na Liga das Nações. Tem contrato com os encarnados até junho de 2029.",
+    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/futebol-liga-portugal-betclic-bah-admite-possibilidade-de-terminar-carreira-no-benfica-nao-me-vejo-a-jogar-noutro-clube/nqDqLzKr/"
   },
   {
-    datum: "2026-11-08", kat_de: "Verletzungen", kat_pt: "Lesões",
-    titel_de: "Aursnes mit Muskelverletzung",
-    titel_pt: "Aursnes com lesão muscular",
-    text_de: "Fredrik Aursnes stand in Amadora wegen einer Muskelverletzung im rechten Oberschenkel nicht im Kader. Wie lange er fehlt, ist offen. Die Länderspiele mit Norwegen dürfte er wohl verpassen.",
-    text_pt: "Fredrik Aursnes ficou fora da convocatória na Amadora devido a uma lesão muscular na coxa direita. O tempo de paragem não foi revelado, mas deverá falhar os jogos da seleção norueguesa.",
-    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/futebol-liga-portugal-betclic-aursnes-falha-jogo-com-o-estrela-da-amadora-devido-a-lesao-muscular/4pT1kVrn/"
+    datum: "2026-11-13", kat_de: "Liga Portugal", kat_pt: "Liga Portugal",
+    titel_de: "Prestianni ist Spieler des Monats",
+    titel_pt: "Prestianni é o jogador do mês",
+    text_de: "Nach den Preisen als bester Angreifer und bester junger Spieler holt Prestianni auch die Hauptauszeichnung der Liga für September und Oktober. Die Trainer gaben ihm 31,48 % der Stimmen, vor André Clóvis (Académico de Viseu) und Teamkollege Pavlidis. In den sechs Spielen des Zeitraums war er an sieben Toren beteiligt (vier Treffer, drei Vorlagen).",
+    text_pt: "Depois dos prémios de melhor avançado e de melhor jovem, Prestianni conquista também a distinção principal da Liga relativa a setembro e outubro. Os treinadores deram-lhe 31,48% dos votos, à frente de André Clóvis (Académico de Viseu) e do colega Pavlidis. Nos seis jogos do período, o argentino participou em sete golos (quatro marcados e três assistências).",
+    quelle: "A Bola", url: "https://www.abola.pt/noticias/benfica-prestianni-eleito-melhor-jogador-da-liga-em-setembrooutubro-2026111315143943854"
   },
   {
-    datum: "2026-11-07", kat_de: "Transfers", kat_pt: "Mercado",
-    titel_de: "Bayern-Interesse an Prestianni",
-    titel_pt: "Bayern de olho em Prestianni",
-    text_de: "Zum Interesse des FC Bayern an Prestianni gibt sich Trainer Marco Silva gelassen. Laut Silva verhandelt Benfica mit dem Flügelspieler, wie mit weiteren Profis, über eine Vertragsverlängerung. Er rechnet mit einer Einigung.",
-    text_pt: "Marco Silva desvalorizou o interesse do Bayern em Prestianni. Segundo o treinador, o Benfica está a negociar a renovação do extremo, tal como a de outros jogadores do plantel, e espera um desfecho positivo.",
-    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/marco-silva-fala-de-prestianni-trubin-e-paulo-fonseca-antes-da-visita-ao-estrela/ERz4TIjf/"
-  },
-  {
-    datum: "2026-11-06", kat_de: "Verein", kat_pt: "Clube",
-    titel_de: "Aus für die U23",
-    titel_pt: "Fim da equipa sub-23",
-    text_de: "Benfica löst seine U23-Mannschaft nach der Saison 2026/27 auf. Künftig setzt der Klub ganz auf die U19 und das B-Team, damit Talente schneller den Sprung zu den Profis schaffen. Bis dahin spielt die U23 weiter in der Liga Next Gen.",
-    text_pt: "O Benfica vai extinguir a equipa sub-23 no fim da época 2026/27. O clube passa a apostar nos sub-19 e na equipa B, para acelerar a chegada dos jovens ao futebol sénior. Até lá, os sub-23 continuam na Liga Next Gen.",
-    quelle: "A Bola", url: "https://www.abola.pt/noticias/oficial-benfica-acaba-com-equipa-sub-23-2026110613590973165"
-  },
-  {
-    datum: "2026-11-05", kat_de: "Europa League", kat_pt: "Liga Europa",
-    titel_de: "Vierter Sieg im vierten Spiel",
-    titel_pt: "Quarta vitória em quatro jogos",
-    text_de: "Benfica schlägt Lech Posen im Estádio da Luz mit 3:1. Rafa, Prestianni und Sudakov treffen. Mit 12 Punkten aus vier Spielen gehören die Adler zur Spitzengruppe der Ligaphase.",
-    text_pt: "O Benfica venceu o Lech Poznań por 3-1 na Luz, com golos de Rafa, Prestianni e Sudakov. Com 12 pontos em quatro jogos, as águias estão no grupo da frente da fase de liga.",
-    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/futebol-liga-europa-ao-vivo-benfica-lech-poznan/hv10kfRh/"
+    datum: "2026-11-13", kat_de: "Transfers", kat_pt: "Mercado",
+    titel_de: "Rui Costa: Prestianni verlängert bis 2031",
+    titel_pt: "Rui Costa: Prestianni vai renovar até 2031",
+    text_de: "Präsident Rui Costa hat bestätigt, dass die Vertragsverlängerung mit Prestianni so gut wie fertig ist; unterschrieben werden soll nach der Länderspielpause. Zugleich versprach er, dass während der Saison kein wichtiger Spieler den Verein verlässt. Er äußerte sich bei der Eröffnung der Casa do Benfica in Cantanhede.",
+    text_pt: "O presidente Rui Costa confirmou que a renovação de Prestianni está praticamente fechada e deverá ser assinada depois da paragem para as seleções. Garantiu ainda que nenhum jogador importante sairá durante a época. As declarações foram feitas na inauguração da Casa do Benfica de Cantanhede.",
+    quelle: "Record", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/benfica/detalhe/rui-costa-confirma-renovacao-de-prestianni-e-garante-nao-saira-nenhum-jogador-importante"
   },
   {
     datum: "", kat_de: "Taça de Portugal", kat_pt: "Taça de Portugal",
-    titel_de: "Pokalspiel gegen Torreense im Jamor?",
-    titel_pt: "Torreense-Benfica no Jamor?",
-    text_de: "Für das Pokalspiel am 22. November sucht Torreense ein größeres Stadion, weil die eigene Arena weniger als 2.500 Plätze hat. Im Gespräch ist das Nationalstadion im Jamor. Entschieden ist noch nichts.",
-    text_pt: "Para o jogo da Taça a 22 de novembro, o Torreense procura um estádio maior, já que o seu tem menos de 2.500 lugares. O Estádio Nacional, no Jamor, é uma hipótese. Ainda não há decisão.",
-    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/taca-de-portugal-jamor-e-possibilidade-para-o-torreense-benfica/QZws9n0e/"
+    titel_de: "Pokalspiel gegen Torreense im Jamor",
+    titel_pt: "Torreense-Benfica joga-se no Jamor",
+    text_de: "Das Pokalduell mit Titelverteidiger Torreense am 22. November findet im Estádio Nacional statt und nicht im kleinen Heimstadion des Gegners, das weniger als 2.500 Plätze hat. So können deutlich mehr Fans dabei sein. Torreense hatte den Pokal im Mai erstmals gewonnen – im Finale gegen Sporting.",
+    text_pt: "O jogo da Taça frente ao detentor do troféu, a 22 de novembro, vai disputar-se no Estádio Nacional e não no Manuel Marques, que tem menos de 2.500 lugares. A mudança permite receber muito mais adeptos. O Torreense venceu a Taça pela primeira vez em maio, numa final com o Sporting.",
+    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/confirmado-torreense-benfica-vai-ser-jogado-no-jamor/AH0N3Xvq/"
+  },
+  {
+    datum: "2026-11-10", kat_de: "Verein", kat_pt: "Clube",
+    titel_de: "Unwetter: Training am Mittwoch fällt aus",
+    titel_pt: "Mau tempo: treino de quarta-feira cancelado",
+    text_de: "Wegen der Unwetterwarnung durch das Tief „Charles“ hat Benfica das Training der Profis am Mittwoch, 11. November, im Benfica Campus gestrichen. Die meisten Stammspieler sind ohnehin bei ihren Nationalteams. Weiter geht es am 22. November mit dem Pokalspiel bei Torreense.",
+    text_pt: "Devido ao alerta meteorológico provocado pela depressão Charles, o Benfica cancelou o treino da equipa principal marcado para quarta-feira, 11 de novembro, no Benfica Campus. A maioria dos habituais titulares está ao serviço das seleções. Segue-se a deslocação ao Torreense, a 22 de novembro, para a Taça de Portugal.",
+    quelle: "Flashscore", url: "https://www.flashscore.pt/noticias/futebol-liga-dos-campeoes-mau-tempo-benfica-cancela-treino-de-quarta-feira/QTh0SHBU/"
+  },
+  {
+    datum: "2026-11-10", kat_de: "Transfers", kat_pt: "Mercado",
+    titel_de: "Keine Verkäufe im Januar?",
+    titel_pt: "Sem vendas em janeiro?",
+    text_de: "Laut Record will Benfica im Winter-Transferfenster keine Leistungsträger abgeben, obwohl mehrere europäische Klubs Interesse zeigen. Als unverkäuflich gelten demnach vor allem Pavlidis, Prestianni und Schjelderup. Eine offizielle Bestätigung des Vereins gibt es nicht.",
+    text_pt: "Segundo o Record, a SAD encarnada não pretende abdicar de jogadores fundamentais no mercado de inverno, apesar do interesse de vários clubes europeus. Pavlidis, Prestianni e Schjelderup estarão entre os intocáveis. O clube não fez qualquer comunicado oficial.",
+    quelle: "Record", url: "https://record.pt/futebol/futebol-nacional/liga-betclic/benfica/detalhe/benfica-blinda-as-estrelas-e-recusa-vendas-em-janeiro"
   }
 ];
 
@@ -413,21 +350,68 @@ function baueNews() {
   document.getElementById("news-stand").textContent = (sprache === "pt" ? "Atualizado: " : "Stand: ") + stand;
 }
 
+// ===== Saison: letzte Ergebnisse und Tabelle =====
+// Wird wie spiele und news automatisch gepflegt.
+// ergebnisse: neueste zuerst, tore immer "Heim:Gast"
+const ergebnisse = [
+  { datum: "2026-11-08", heim: "Estrela da Amadora", gast: "Benfica", tore: "2:3", wettbewerb: "Liga Portugal" },
+  { datum: "2026-11-05", heim: "Benfica", gast: "Lech Poznań", tore: "3:1", wettbewerb: "Europa League" },
+  { datum: "2026-11-02", heim: "Benfica", gast: "Alverca", tore: "1:0", wettbewerb: "Liga Portugal" }
+];
+// tabelle: die ersten 5 Plätze (und Benfica, falls schlechter als Platz 5)
+const tabelle = {
+  runde: 11, stand: "2026-11-13",
+  teams: [
+    { platz: 1, team: "FC Porto", spiele: 11, punkte: 33 },
+    { platz: 2, team: "Benfica", spiele: 11, punkte: 28 },
+    { platz: 3, team: "Sporting", spiele: 11, punkte: 24 },
+    { platz: 4, team: "Santa Clara", spiele: 11, punkte: 21 },
+    { platz: 5, team: "Arouca", spiele: 11, punkte: 20 }
+  ]
+};
+
+function baueSaison() {
+  const text = t[sprache];
+  const locale = sprache === "pt" ? "pt-PT" : "de-DE";
+  // Ergebnisse aus Benfica-Sicht: Sieg, Unentschieden, Niederlage
+  const liste = document.getElementById("ergebnis-liste");
+  liste.innerHTML = "";
+  ergebnisse.forEach(e => {
+    const [h, g] = e.tore.split(":").map(Number);
+    const eigene = e.heim === "Benfica" ? h : g;
+    const andere = e.heim === "Benfica" ? g : h;
+    const art = eigene > andere ? "s" : eigene === andere ? "u" : "n";
+    const datum = new Date(e.datum + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "short" });
+    const li = document.createElement("li");
+    li.innerHTML = `<span class="ergebnis-art ${art}">${text[art]}</span>
+      <span class="ergebnis-teams">${e.heim} – ${e.gast}<small>${datum} · ${e.wettbewerb}</small></span>
+      <span class="ergebnis-tore">${e.tore}</span>`;
+    liste.appendChild(li);
+  });
+  // Tabelle
+  const tab = document.getElementById("tabelle");
+  tab.innerHTML = `<tr><th></th><th></th><th>${text.sp}</th><th>${text.pkt}</th></tr>` +
+    tabelle.teams.map(z => `<tr class="${z.team === "Benfica" ? "benfica" : ""}">
+      <td>${z.platz}.</td><td>${z.team}</td><td>${z.spiele}</td><td><strong>${z.punkte}</strong></td></tr>`).join("");
+  const stand = new Date(tabelle.stand + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long" });
+  document.getElementById("tabelle-stand").textContent = text.tabelleStand(tabelle.runde, stand);
+}
+
 // ===== Trophäen-Vitrine =====
 const pokale = [
-  { anzahl: 2,  bild: "img/pokale/landesmeister.png", de: "Europapokal der Landesmeister", pt: "Taça dos Campeões Europeus",
+  { anzahl: 2,  bild: "", de: "Europapokal der Landesmeister", pt: "Taça dos Campeões Europeus",
     info_de: "1961 (3:2 gegen Barcelona) und 1962 (5:3 gegen Real Madrid)",
     info_pt: "1961 (3-2 ao Barcelona) e 1962 (5-3 ao Real Madrid)" },
-  { anzahl: 38, bild: "img/pokale/meisterschaft.png", de: "Portugiesische Meisterschaft", pt: "Campeonato Nacional",
+  { anzahl: 38, bild: "", de: "Portugiesische Meisterschaft", pt: "Campeonato Nacional",
     info_de: "Rekordmeister Portugals – kein Verein hat öfter die Liga gewonnen.",
     info_pt: "Recordista nacional – nenhum clube ganhou mais vezes o campeonato." },
-  { anzahl: 26, bild: "img/pokale/taca-de-portugal.png", de: "Taça de Portugal", pt: "Taça de Portugal",
+  { anzahl: 26, bild: "", de: "Taça de Portugal", pt: "Taça de Portugal",
     info_de: "Rekordsieger im portugiesischen Pokal.",
     info_pt: "Recordista de vitórias na Taça de Portugal." },
-  { anzahl: 8,  bild: "img/pokale/taca-da-liga.png", de: "Taça da Liga", pt: "Taça da Liga",
+  { anzahl: 8,  bild: "", de: "Taça da Liga", pt: "Taça da Liga",
     info_de: "Rekordsieger im Ligapokal, zuletzt 2025 im Finale gegen Sporting.",
     info_pt: "Recordista da Taça da Liga, a última em 2025 na final frente ao Sporting." },
-  { anzahl: 10, bild: "img/pokale/supertaca.png", de: "Supertaça", pt: "Supertaça",
+  { anzahl: 10, bild: "", de: "Supertaça", pt: "Supertaça",
     info_de: "Zuletzt 2025 mit einem Sieg gegen Sporting gewonnen.",
     info_pt: "A última conquistada em 2025, com vitória frente ao Sporting." }
 ];
@@ -451,7 +435,7 @@ function baueVitrine() {
   pokale.forEach(p => {
     const btn = document.createElement("button");
     btn.className = "pokal";
-    // Foto des echten Pokals, sonst der gezeichnete Pokal als Ersatz
+    // Selbst gezeichneter Pokal (Fotos der echten Pokale sind nicht frei verwendbar)
     const grafik = p.bild ? `<img src="${p.bild}" alt="${p[sprache]}" loading="lazy">` : pokalSVG;
     btn.innerHTML = `${grafik}<span class="pokal-anzahl">${p.anzahl}×</span><span class="pokal-name">${p[sprache]}</span>`;
     btn.addEventListener("click", () => {
@@ -464,66 +448,6 @@ function baueVitrine() {
 }
 
 // ===== Zeitleiste =====
-// ===== Geschichte des Wappens =====
-// Quelle der Fakten: slbenfica.pt (Seite „Símbolos“)
-const wappen = [
-  { jahre: "1904–1906", bild: "img/wappen/1904.png",
-    name_de: "Sport Lisboa", name_pt: "Sport Lisboa",
-    text_de: "Das erste Wappen entsteht schon vor der Gründung am 28. Februar 1904: ein rot-weißer Schild mit den Buchstaben „S.L.“ und einem Ball, darüber der Adler mit dem Band „E Pluribus Unum“.",
-    text_pt: "O primeiro emblema nasce ainda antes da fundação, a 28 de fevereiro de 1904: um escudo vermelho e branco com as letras “S.L.” e uma bola, encimado pela águia com a fita “E Pluribus Unum”." },
-  { jahre: "1906–1908", bild: "img/wappen/1906.png",
-    name_de: "Grupo Sport Benfica", name_pt: "Grupo Sport Benfica",
-    text_de: "Der Grupo Sport Benfica, gegründet 1906, hat ein eigenes Wappen: einen Schild mit den Buchstaben „G.S.B.“ in einem Fahrradrad.",
-    text_pt: "O Grupo Sport Benfica, fundado em 1906, tem o seu próprio emblema: um escudo com as letras “G.S.B.” dentro de uma roda de bicicleta." },
-  { jahre: "1908–1930", bild: "img/wappen/1908.png",
-    name_de: "Sport Lisboa e Benfica", name_pt: "Sport Lisboa e Benfica",
-    text_de: "Nach der Fusion beider Vereine wird das Wappen des Sport Lisboa um das Fahrradrad ergänzt. Aus „S.L.“ wird „S.L.B.“.",
-    text_pt: "Depois da fusão dos dois clubes, o emblema do Sport Lisboa ganha a roda de bicicleta. “S.L.” passa a “S.L.B.”." },
-  { jahre: "1930–1961", bild: "img/wappen/1930.png",
-    name_de: "Die heutige Form entsteht", name_pt: "Nasce a forma atual",
-    text_de: "Ab 1930 bekommt das Wappen im Wesentlichen seine heutige Gestalt: goldener Adler, grün-rotes Band, blaue Schärpe mit „S.L.B.“ und ein Ball im Schild.",
-    text_pt: "A partir de 1930, o emblema ganha no essencial a forma atual: águia dourada, fita verde e vermelha, faixa azul com “S.L.B.” e uma bola no escudo." },
-  { jahre: "1961–1973", bild: "img/wappen/1961.png",
-    name_de: "Neue Farben", name_pt: "Novas cores",
-    text_de: "Der Aufbau bleibt gleich, aber die Farben ändern sich: Das Rad bekommt einen kräftigen orangeroten Ring, die Schärpe wird grün.",
-    text_pt: "A estrutura mantém-se, mas as cores mudam: a roda ganha um anel vermelho-alaranjado forte e a faixa passa a verde." },
-  { jahre: "1973–1999", bild: "img/wappen/1973.png",
-    name_de: "Zurück zu hellen Tönen", name_pt: "Regresso aos tons claros",
-    text_de: "Der Ring wird wieder hell, die Schärpe hellblau. Linien und Farben wirken klarer.",
-    text_pt: "O anel volta a ser claro e a faixa passa a azul-claro. As linhas e as cores ficam mais nítidas." },
-  { jahre: "seit 1999", jahre_pt: "desde 1999", bild: "img/wappen/1999.png",
-    name_de: "Das heutige Wappen", name_pt: "O emblema atual",
-    text_de: "Das Wappen wird leicht überarbeitet: Die ursprünglichen Linien bleiben, der Adler bekommt eine neue Position. So sieht es bis heute aus.",
-    text_pt: "O emblema é ligeiramente redesenhado: mantém as linhas originais e a águia muda de posição. É assim que se apresenta até hoje." }
-];
-let wappenAuswahl = 0;
-
-function zeigeWappen(i) {
-  wappenAuswahl = i;
-  const w = wappen[i];
-  const bild = document.getElementById("wappen-bild");
-  bild.src = w.bild;
-  bild.alt = sprache === "pt" ? w.name_pt : w.name_de;
-  document.getElementById("wappen-jahre").textContent = sprache === "pt" && w.jahre_pt ? w.jahre_pt : w.jahre;
-  document.getElementById("wappen-name").textContent = sprache === "pt" ? w.name_pt : w.name_de;
-  document.getElementById("wappen-text").textContent = sprache === "pt" ? w.text_pt : w.text_de;
-  document.querySelectorAll(".wappen-knopf").forEach((k, n) => k.classList.toggle("aktiv", n === i));
-}
-
-function baueWappen() {
-  const leiste = document.getElementById("wappen-leiste");
-  leiste.innerHTML = "";
-  wappen.forEach((w, i) => {
-    const knopf = document.createElement("button");
-    knopf.className = "wappen-knopf";
-    const jahr = w.jahre.match(/\d{4}/)[0];
-    knopf.innerHTML = `<img src="${w.bild}" alt="" loading="lazy"><span>${jahr}</span>`;
-    knopf.addEventListener("click", () => zeigeWappen(i));
-    leiste.appendChild(knopf);
-  });
-  zeigeWappen(wappenAuswahl);
-}
-
 document.querySelectorAll(".timeline-year").forEach(button =>
   button.addEventListener("click", () => button.parentElement.classList.toggle("offen"))
 );
@@ -636,7 +560,10 @@ modal.addEventListener("click", e => { if (e.target === modal) schliesseKader();
 document.addEventListener("keydown", e => { if (e.key === "Escape") schliesseKader(); });
 
 // ===== Quiz =====
-const fragen = [
+// Fragenpool: pro Runde werden zufällig FRAGEN_PRO_RUNDE Fragen gezogen,
+// die Reihenfolge der Antworten wird jedes Mal neu gemischt.
+// "richtig" ist der Index der richtigen Antwort in der Liste unten.
+const fragenPool = [
   { de: "In welchem Jahr wurde Benfica gegründet?", pt: "Em que ano foi fundado o Benfica?",
     antworten: { de: ["1894", "1904", "1921", "1933"], pt: ["1894", "1904", "1921", "1933"] }, richtig: 1 },
   { de: "Wie heißt das Stadion von Benfica?", pt: "Como se chama o estádio do Benfica?",
@@ -649,9 +576,64 @@ const fragen = [
   { de: "Welches Tier ist das Symbol von Benfica?", pt: "Que animal é o símbolo do Benfica?",
     antworten: { de: ["Löwe", "Drache", "Adler", "Stier"], pt: ["Leão", "Dragão", "Águia", "Touro"] }, richtig: 2 },
   { de: "Wie oft wurde Benfica portugiesischer Meister (Stand 2026)?", pt: "Quantos campeonatos nacionais tem o Benfica (2026)?",
-    antworten: { de: ["31", "35", "38", "42"], pt: ["31", "35", "38", "42"] }, richtig: 2 }
+    antworten: { de: ["31", "35", "38", "42"], pt: ["31", "35", "38", "42"] }, richtig: 2 },
+  { de: "Wie lautet das Motto von Benfica?", pt: "Qual é o lema do Benfica?",
+    antworten: { de: ["Veni, vidi, vici", "E Pluribus Unum", "Mens sana in corpore sano", "Carpe diem"],
+                 pt: ["Veni, vidi, vici", "E Pluribus Unum", "Mens sana in corpore sano", "Carpe diem"] }, richtig: 1 },
+  { de: "Unter welchem Namen wurde der Verein 1904 gegründet?", pt: "Com que nome foi fundado o clube em 1904?",
+    antworten: { de: ["Sport Lisboa", "Lisboa Futebol Clube", "Grupo Sport Benfica", "Os Encarnados"],
+                 pt: ["Sport Lisboa", "Lisboa Futebol Clube", "Grupo Sport Benfica", "Os Encarnados"] }, richtig: 0 },
+  { de: "In welchem Jahr wurde das neue Estádio da Luz eröffnet?", pt: "Em que ano foi inaugurado o novo Estádio da Luz?",
+    antworten: { de: ["1998", "2001", "2003", "2006"], pt: ["1998", "2001", "2003", "2006"] }, richtig: 2 },
+  { de: "Gegen wen gewann Benfica 1961 den ersten Europapokal?", pt: "Contra quem conquistou o Benfica a primeira Taça dos Campeões, em 1961?",
+    antworten: { de: ["Real Madrid", "FC Barcelona", "Inter Mailand", "Manchester United"], pt: ["Real Madrid", "FC Barcelona", "Inter de Milão", "Manchester United"] }, richtig: 1 },
+  { de: "In welcher Stadt fand das Europapokalfinale 1962 statt?", pt: "Em que cidade se jogou a final europeia de 1962?",
+    antworten: { de: ["Bern", "Wien", "Amsterdam", "London"], pt: ["Berna", "Viena", "Amesterdão", "Londres"] }, richtig: 2 },
+  { de: "Aus welchem Land kam Eusébio nach Lissabon?", pt: "De que país chegou Eusébio a Lisboa?",
+    antworten: { de: ["Brasilien", "Angola", "Kap Verde", "Mosambik"], pt: ["Brasil", "Angola", "Cabo Verde", "Moçambique"] }, richtig: 3 },
+  { de: "Wie viele Tore schoss Eusébio bei der WM 1966?", pt: "Quantos golos marcou Eusébio no Mundial de 1966?",
+    antworten: { de: ["5", "7", "9", "12"], pt: ["5", "7", "9", "12"] }, richtig: 2 },
+  { de: "Was bedeutet der Spitzname „Os Encarnados“?", pt: "A que se refere a alcunha “Os Encarnados”?",
+    antworten: { de: ["Die Adler", "Die Roten", "Die Lissabonner", "Die Unbesiegbaren"],
+                 pt: ["Às águias", "Às camisolas vermelhas", "Aos lisboetas", "Aos invencíveis"] }, richtig: 1 },
+  { de: "Welcher Gegenstand steht seit 1908 im Benfica-Wappen?", pt: "Que objeto faz parte do emblema do Benfica desde 1908?",
+    antworten: { de: ["Ein Anker", "Eine Krone", "Ein Fahrradrad", "Ein Schiff"], pt: ["Uma âncora", "Uma coroa", "Uma roda de bicicleta", "Um navio"] }, richtig: 2 },
+  { de: "Wo liegt die Nachwuchsakademie von Benfica?", pt: "Onde fica a academia de formação do Benfica?",
+    antworten: { de: ["Seixal", "Alcochete", "Olival", "Sintra"], pt: ["Seixal", "Alcochete", "Olival", "Sintra"] }, richtig: 0 },
+  { de: "Welches Endspiel fand 2014 im Estádio da Luz statt?", pt: "Que final se disputou no Estádio da Luz em 2014?",
+    antworten: { de: ["WM-Finale", "Champions-League-Finale", "EM-Finale", "Europa-League-Finale"],
+                 pt: ["Final do Mundial", "Final da Liga dos Campeões", "Final do Europeu", "Final da Liga Europa"] }, richtig: 1 },
+  { de: "Wie oft gewann Benfica die Taça de Portugal (Stand 2026)?", pt: "Quantas Taças de Portugal tem o Benfica (2026)?",
+    antworten: { de: ["14", "20", "26", "31"], pt: ["14", "20", "26", "31"] }, richtig: 2 },
+  { de: "Wie heißen die Fanclubs von Benfica auf der ganzen Welt?", pt: "Como se chamam as filiais do Benfica pelo mundo?",
+    antworten: { de: ["Casas do Benfica", "Núcleos Águia", "Clubes da Luz", "Peñas Benfiquistas"],
+                 pt: ["Casas do Benfica", "Núcleos Águia", "Clubes da Luz", "Peñas Benfiquistas"] }, richtig: 0 }
 ];
+const FRAGEN_PRO_RUNDE = 8;
 
+// Zufällig mischen (Fisher-Yates)
+function mische(liste) {
+  const a = [...liste];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Neue Runde: Fragen ziehen und Antworten mischen (gleiche Reihenfolge in beiden Sprachen)
+function neueRunde() {
+  return mische(fragenPool).slice(0, FRAGEN_PRO_RUNDE).map(f => {
+    const reihenfolge = mische([0, 1, 2, 3]);
+    return {
+      de: f.de, pt: f.pt,
+      antworten: { de: reihenfolge.map(i => f.antworten.de[i]), pt: reihenfolge.map(i => f.antworten.pt[i]) },
+      richtig: reihenfolge.indexOf(f.richtig)
+    };
+  });
+}
+
+let fragen = neueRunde();
 let aktuelleFrage = 0;
 let punkte = 0;
 const frageEl = document.getElementById("quiz-frage");
@@ -704,6 +686,8 @@ function zeigeErgebnis() {
 
 weiterBtn.addEventListener("click", () => {
   if (aktuelleFrage >= fragen.length) {
+    // neue Runde mit anderen Fragen
+    fragen = neueRunde();
     aktuelleFrage = 0;
     punkte = 0;
   } else {

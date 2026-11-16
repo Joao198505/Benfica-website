@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Benfica – Die Adler aus Lissabon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Fanseite über Benfica Lissabon: nächstes Spiel mit Countdown, News, Tabelle, Geschichte, Trophäen und Quiz.">
+  <!-- Vorschau beim Teilen (WhatsApp, Instagram, X …) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benfica-website.netlify.app/">
+  <meta property="og:title" content="Benfica – Die Adler aus Lissabon">
+  <meta property="og:description" content="Fanseite mit Countdown zum nächsten Spiel, News, Tabelle, Geschichte, Trophäen und Quiz.">
+  <meta property="og:image" content="https://benfica-website.netlify.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Schriften liegen lokal im Ordner fonts/ (keine Verbindung zu Google) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +25,7 @@
 
   <!-- Navigation -->
   <nav class="nav">
-    <a href="#start" class="nav-logo" title="Adler fliegen lassen">BENFICA</a>
+    <a href="#start" class="nav-logo">BENFICA</a>
     <ul class="nav-links">
       <li><a href="#" class="kader-oeffnen" data-i18n="nav_kader">Kader</a></li>
       <li><a href="#news">News</a></li>
@@ -42,86 +51,11 @@
     <div class="flutlicht flutlicht-1"></div>
     <div class="flutlicht flutlicht-2"></div>
 
-    <!-- Fliegender Adler (eigene Zeichnung) -->
-    <div class="adler-bahn" id="adler">
-      <svg class="adler" viewBox="0 0 400 200" aria-hidden="true">
-        <defs>
-          <linearGradient id="fluegel-farbe" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#4a301a"/>
-            <stop offset="0.55" stop-color="#2b1a0d"/>
-            <stop offset="1" stop-color="#140c05"/>
-          </linearGradient>
-          <linearGradient id="deck-farbe" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#7a5430"/>
-            <stop offset="1" stop-color="#4a301a"/>
-          </linearGradient>
-          <radialGradient id="koerper-farbe" cx="0.5" cy="0.35" r="0.7">
-            <stop offset="0" stop-color="#6b4626"/>
-            <stop offset="1" stop-color="#24160a"/>
-          </radialGradient>
-          <radialGradient id="kopf-farbe" cx="0.4" cy="0.35" r="0.7">
-            <stop offset="0" stop-color="#ffffff"/>
-            <stop offset="1" stop-color="#d9d4cc"/>
-          </radialGradient>
-          <g id="fluegel-form">
-            <!-- Hauptflügel mit gespreizten Schwungfedern -->
-            <path fill="url(#fluegel-farbe)" d="M192 80
-              C 165 62, 118 50, 70 50
-              L 14 34 L 58 56
-              L 4 50 L 54 64
-              L 2 68 L 52 74
-              L 8 88 L 56 84
-              L 20 104 L 66 92
-              C 88 104, 112 110, 128 106
-              Q 138 116, 148 106 Q 158 116, 168 104 Q 178 112, 192 100 Z"/>
-            <!-- hellere Deckfedern am Vorderrand -->
-            <path fill="url(#deck-farbe)" opacity="0.9" d="M192 80
-              C 165 62, 118 52, 74 52
-              C 104 64, 140 74, 192 92 Z"/>
-            <!-- Federlinien -->
-            <g stroke="#0d0803" stroke-width="1.2" fill="none" opacity="0.55">
-              <path d="M70 52 L 18 37"/><path d="M68 60 L 8 52"/><path d="M66 70 L 6 69"/>
-              <path d="M68 80 L 12 87"/><path d="M72 88 L 24 102"/>
-              <path d="M128 106 L 118 78"/><path d="M148 106 L 142 82"/><path d="M168 104 L 164 86"/>
-            </g>
-          </g>
-        </defs>
-
-        <!-- Flügel: Animation außen, Spiegelung innen -->
-        <g class="fluegel fluegel-links"><use href="#fluegel-form"/></g>
-        <g class="fluegel fluegel-rechts"><use href="#fluegel-form" transform="translate(400 0) scale(-1 1)"/></g>
-
-        <!-- Schwanzfächer -->
-        <path fill="#f2efe9" d="M186 128 L 170 172 Q 200 184, 230 172 L 214 128 Z"/>
-        <g stroke="#b8b2a8" stroke-width="1" opacity="0.8">
-          <path d="M193 132 L 184 175"/><path d="M200 132 L 200 179"/><path d="M207 132 L 216 175"/>
-        </g>
-
-        <!-- Körper -->
-        <path fill="url(#koerper-farbe)" d="M200 66 C 222 70, 226 96, 220 118 C 216 132, 206 140, 200 140 C 194 140, 184 132, 180 118 C 174 96, 178 70, 200 66 Z"/>
-
-        <!-- Fänge -->
-        <path fill="#e8b923" d="M188 132 c -4 6, -2 10, 2 9 c 3 -1, 4 -5, 2 -9 Z"/>
-        <path fill="#e8b923" d="M212 132 c 4 6, 2 10, -2 9 c -3 -1, -4 -5, -2 -9 Z"/>
-
-        <!-- Kopf -->
-        <path fill="url(#kopf-farbe)" d="M200 42 C 214 42, 220 54, 217 66 C 214 76, 207 80, 200 80 C 193 80, 186 76, 183 66 C 180 54, 186 42, 200 42 Z"/>
-        <!-- Augen -->
-        <circle cx="192" cy="58" r="2.6" fill="#c98a12"/><circle cx="192" cy="58" r="1.2" fill="#111"/>
-        <circle cx="208" cy="58" r="2.6" fill="#c98a12"/><circle cx="208" cy="58" r="1.2" fill="#111"/>
-        <path d="M187 54 L 196 55" stroke="#9a9488" stroke-width="1.5"/>
-        <path d="M213 54 L 204 55" stroke="#9a9488" stroke-width="1.5"/>
-        <!-- Schnabel mit Haken -->
-        <path fill="#f0c020" d="M194 62 C 194 58, 206 58, 206 62 L 204 72 C 203 77, 200 80, 198 76 L 196 70 Z"/>
-        <path fill="#c99510" d="M198 76 C 200 80, 203 77, 204 72 L 201 73 Z"/>
-      </svg>
-    </div>
-
     <div class="hero-inner">
       <p class="hero-kicker" data-i18n="hero_kicker">Sport Lisboa e Benfica · seit 1904</p>
       <div class="titel-wrap">
-        <!-- Logo hinter dem Schriftzug: lege deine Bilddatei als img/logo.png ab -->
-        <img class="hero-logo" src="img/logo.png" alt="" onerror="this.style.display='none'">
+        <!-- Historisches Wappen von 1930 (gemeinfrei, Quelle im Footer) -->
+        <img class="hero-logo" src="img/wappen/1930.png" alt="" onerror="this.style.display='none'">
         <h1 data-i18n="hero_titel">Die Adler<br>aus Lissabon</h1>
       </div>
       <p class="hero-text" data-i18n="hero_text">Portugals Rekordmeister, zweifacher Europapokalsieger und ein Verein, der für Millionen Menschen mehr ist als Fußball.</p>
@@ -154,6 +88,18 @@
       <div class="news-inner">
         <h2 class="section-title">News</h2>
         <p class="section-intro" data-i18n="news_intro">Das Neueste rund um die Adler – in eigenen Worten zusammengefasst, mit Link zum Originalartikel.</p>
+        <!-- Saison: letzte Ergebnisse und Tabelle (Daten in script.js) -->
+        <div class="saison-grid">
+          <div class="saison-karte">
+            <h3 data-i18n="ergebnisse_titel">Letzte Ergebnisse</h3>
+            <ul class="ergebnis-liste" id="ergebnis-liste"></ul>
+          </div>
+          <div class="saison-karte">
+            <h3 data-i18n="tabelle_titel">Tabelle Liga Portugal</h3>
+            <table class="tabelle" id="tabelle"></table>
+            <p class="tabelle-stand" id="tabelle-stand"></p>
+          </div>
+        </div>
         <div class="news-grid" id="news-grid"></div>
         <p class="news-stand" id="news-stand"></p>
       </div>
@@ -165,7 +111,6 @@
       <p class="section-intro" data-i18n="geschichte_intro">Klick auf ein Jahr, um mehr zu erfahren.</p>
       <div class="geschichte-grid">
       <div>
-      <h3 class="geschichte-unter" data-i18n="geschichte_verein">Der Verein</h3>
       <div class="timeline">
         <div class="timeline-item">
           <button class="timeline-year">1904</button>
@@ -194,19 +139,6 @@
       </div>
       </div>
 
-      <!-- Geschichte des Wappens (wird per JavaScript gefüllt) -->
-      <div class="wappen-box">
-        <h3 class="geschichte-unter" data-i18n="geschichte_wappen">Das Wappen</h3>
-        <div class="wappen-anzeige">
-          <img id="wappen-bild" src="" alt="">
-          <div>
-            <p class="wappen-jahre" id="wappen-jahre"></p>
-            <h4 class="wappen-name" id="wappen-name"></h4>
-            <p class="wappen-text" id="wappen-text"></p>
-          </div>
-        </div>
-        <div class="wappen-leiste" id="wappen-leiste"></div>
-      </div>
       </div>
     </section>
 
@@ -322,9 +254,39 @@
   <footer class="footer">
     <p data-i18n="footer_1">Eine Fan-Website · Erstellt mit ❤️ von Joao</p>
     <p class="footer-klein" data-i18n="footer_2">Keine offizielle Seite von Sport Lisboa e Benfica.</p>
+
+    <!-- Rechtliche Hinweise zum Aufklappen -->
+    <div class="footer-rechtliches">
+      <details id="datenschutz">
+        <summary data-i18n="ds_titel">Datenschutz</summary>
+        <div data-i18n="ds_text">
+          <p><strong>Verantwortlich</strong> für die Datenverarbeitung auf dieser Seite ist der Betreiber dieser Fanseite. Name und Kontaktdaten werden in Kürze im Impressum ergänzt.</p>
+          <p><strong>Was diese Seite nicht macht:</strong> keine Cookies, keine Analyse- oder Tracking-Dienste, keine Werbung, keine Kontaktformulare, keine eingebetteten Videos oder Social-Media-Inhalte. Schriften und Bilder werden direkt von dieser Seite geladen, es gibt keine Verbindung zu Google Fonts oder anderen Drittanbietern.</p>
+          <p><strong>Hosting und Server-Logdateien:</strong> Die Seite liegt bei Netlify, Inc. (USA) und als Artifact auf claude.ai bei Anthropic PBC (USA). Beim Aufruf verarbeitet der jeweilige Anbieter technisch notwendige Daten, vor allem IP-Adresse, Datum und Uhrzeit, aufgerufene Datei, Browser und Betriebssystem. Das ist nötig, um die Seite auszuliefern und sicher zu betreiben. Rechtsgrundlage ist mein berechtigtes Interesse an einem funktionierenden Angebot (Art. 6 Abs. 1 lit. f DSGVO). Dabei können Daten in die USA übermittelt werden. Welche Garantien die Anbieter dafür vorsehen, zum Beispiel EU-Standardvertragsklauseln oder das EU-US Data Privacy Framework, steht in den Datenschutzhinweisen von <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Netlify</a> und <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>.</p>
+          <p><strong>Speicher im Browser:</strong> Wenn du die Sprache wechselst oder einen Lieblingsspieler markierst, wird diese Auswahl im Speicher deines Browsers abgelegt (localStorage), damit sie beim nächsten Besuch noch da ist. Die Angaben verlassen dein Gerät nicht und werden von mir nicht ausgewertet. Das ist für diese von dir gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Du kannst die Daten jederzeit über die Einstellungen deines Browsers löschen.</p>
+          <p><strong>Links zu anderen Seiten:</strong> Die News verlinken auf Artikel von Nachrichtenseiten. Erst wenn du einen Link anklickst, wird die fremde Seite geladen. Dort gelten deren Datenschutzbestimmungen.</p>
+          <p><strong>Deine Rechte:</strong> Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung, auf Datenübertragbarkeit sowie auf Widerspruch gegen die Verarbeitung (Art. 15 bis 21 DSGVO). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO).</p>
+        </div>
+      </details>
+      <details id="bildquellen">
+        <summary data-i18n="bq_titel">Bildquellen und Lizenzen</summary>
+        <div data-i18n="bq_text">
+          <ul>
+            <li><strong>Startbild:</strong> „<a href="https://commons.wikimedia.org/wiki/File:Estadio_Da_Luz_Benfica.jpg" target="_blank" rel="noopener">Estadio Da Luz Benfica</a>“ von 4theliberty, Wikimedia Commons, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de" target="_blank" rel="noopener">CC0 1.0</a> (gemeinfrei).</li>
+            <li><strong>Stadion:</strong> „<a href="https://commons.wikimedia.org/wiki/File:Estadio_Benfica_April_2013-1.jpg" target="_blank" rel="noopener">Estadio Benfica April 2013-1</a>“ von Alvesgaspar, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Verkleinert und abgedunkelt.</li>
+            <li><strong>Eusébio:</strong> „<a href="https://commons.wikimedia.org/wiki/File:Eus%C3%A9bio%27s_European_Golden_Shoes_at_Museu_Cosme_Dami%C3%A3o.JPG" target="_blank" rel="noopener">Eusébio's European Golden Shoes at Museu Cosme Damião</a>“ von Threeohsix, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Verkleinert und abgedunkelt.</li>
+            <li><strong>Fans und Vorschaubild zum Teilen:</strong> „<a href="https://commons.wikimedia.org/wiki/File:The_Da_Luz_Stadium_before_a_game_between_SL_Benfica_and_FC_Porto.jpg" target="_blank" rel="noopener">The Da Luz Stadium before a game between SL Benfica and FC Porto</a>“ von Vincenzo.togni, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Verkleinert und rot eingefärbt, im Vorschaubild mit Text und Wappen kombiniert. Die bearbeiteten Bilder stehen ebenfalls unter CC BY-SA 4.0.</li>
+            <li><strong>Historisches Wappen von 1930</strong> (Startbereich und Vorschaubild): gemeinfrei, da der Urheber vor über 70 Jahren gestorben ist. Quelle: <a href="https://commons.wikimedia.org/wiki/File:Emblema_Benfica_1930_(Sem_fundo).png" target="_blank" rel="noopener">Wikimedia Commons</a>.</li>
+            <li><strong>Selbst gestaltet:</strong> Pokale und Trikots.</li>
+            <li><strong>Schriften:</strong> Inter und Bebas Neue unter der SIL Open Font License 1.1 (Lizenztexte: <a href="fonts/OFL-Inter.txt" target="_blank" rel="noopener">Inter</a>, <a href="fonts/OFL-BebasNeue.txt" target="_blank" rel="noopener">Bebas Neue</a>).</li>
+            <li><strong>Texte:</strong> Die News sind eigene Zusammenfassungen. Die Rechte an den Originalartikeln liegen bei den verlinkten Medien.</li>
+          </ul>
+          <p>Der Name „Benfica“ und das Vereinswappen sind Marken von Sport Lisboa e Benfica. Sie werden hier nur genutzt, um den Verein zu benennen. Wer Rechte an Inhalten dieser Seite hat und eine Änderung wünscht, kann sich jederzeit beim Betreiber melden.</p>
+        </div>
+      </details>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
